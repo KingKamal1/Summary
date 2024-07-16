@@ -1,0 +1,143 @@
+/* ====================================================== Ghareep Elshekh ================================================================= */
+// to login your username as a local account not for signing in do the next
+git config --global user.name "username"
+// to sign in your account use the next command
+git config --global user.email "email"
+// to make a local repository use the next command
+git init "RepoName"
+// to create a file but it still in establishing area
+touch fileName.extension
+// to put your changes state to enter the repository
+git add fileName.extension
+// to save the changes into the repository
+git commit -m "all the changes were saved successfully"
+// to see the history of changes in your repository use the next command
+git log
+// to back to some changes you have done in your repository do the next
+git checkout unicode        !! the unicode is the huge number after commit in git log file (paste the unicode that you want to back to)
+// to clear the terminal
+clear
+// to show how many branches you have
+git branch
+// to change to some branch
+git checkout branchName
+// to make a branch
+git branch branchName
+// to merge two branches or more do the next
+1) switch to the branch you want to merge all the branches to
+2) git merge branchName
+// to check what github repos you have access to
+git remote -v
+// to connect yourself to github repository
+git remote add RepoName linkOftheRepository
+// to send your repository to github in repo called LiveRepository
+git push -u LiveRepository master  !! LiveRepository is the name that you defined in connecting and master is the name of your main local repo
+// to get the data from the github to the main local repo
+git pull LiveRepository branchName
+// to get the data from the github to specific branch
+git pull LiveRepository branchName -b YourLocalBranchName
+/* ====================================================== Osama Elzero ================================================================= */
+// to enter some folder
+cd folderName
+// to make a folder
+mkdir folderName
+// to clone a repo in your laptop
+1) stop in the location where you want to clone the repo
+2) write git clone RepoName
+// to show what is happening now in your git project
+git status
+// stage files
+git add filesNames
+// to unstage files
+git reset head fileName
+// to put in your local repo
+git commit -m "some message"
+// to get all your branches
+git branch
+// to show all your remote repos
+git remote -v
+// to push your changes in remote repo
+git push RemoteName branchName
+// to get the changes in remote repo
+git pull RemoteName
+// to edit your configration
+/*
+/* Generally You Can Use This git config --global --edit */
+// Globally
+git config --global user.email "userEmail"
+// Locally
+git config user.email "userEmail"
+*/
+// to Generate Public Key
+ssh-keygen -t rsa 4096 -C "kamalsayed4869@gmail.com"
+! it will ask for username and password to generate a public key
+// to take the public key code
+cat ~/.ssh/id_rsa.pub
+! in github enter in ssh and gpg and then add at ssh keys
+// to connect the public key with a website
+ssh -T websiteLink
+// to make a repo
+git init RepoName   ! to make a new file and repo at the same time
+git init            ! in case you want to change the folder you are in to a repo
+// to create a new file
+touch fileName.extension
+// to abbrivate long words
+git config --global alias.abbriviation theOriginalCode
+// to create a new branch
+git branch branchName
+// to move to some branch
+git checkout branchName
+// to delete a branch
+git branch -d branchName
+// to create a new branch and switch to it immediately
+git checkout -b branchName
+// to rename a branch
+1) enter the branch
+2) write git branch -m theNewName
+// to merge two branches
+1) enter the branch you want to merge into
+2) write git merge the_Branch_You_Want_To_Merge
+// to hide some files from the status and the stage
+git stash
+// to display the hidden files
+git stash pop
+// to add message to the stash
+1) after staging the files you want to stash or hide
+2) write git stash save "Your Message"
+// to show the files you want but keep a copy of them in the stash you can write the next
+git stash apply
+// to choose the stash you want to show
+git stash pop stach@{index}
+// to show the list of all the hidden files in your stash
+git stash list
+// to delete a hidden file
+git stash drop
+// to show the stash box
+git stash show stash@{index}
+// to unstage some file
+git restore --staged fileName
+// to clean the files you want
+git clean -n            ! to know what will get deleted
+git clean -f            ! to delete the files
+// to show the history of the files
+git log
+// to back to some point in the history
+git reset --hard thePointURL
+// to ignore some files
+touch .gitignore
+code .gitignore
+/*
+*.log                       => ignore all files .log extension
+!FileName.log               => this file is not included in ignoring operation
+folderName/                 => ignore this folder too
+*/
+// to display all the tags
+git tag
+// to create a new tag
+git tag TagName
+// to push your new tag
+git push RemoteRepo TagName
+// to create a new anotated tag
+git tag -a TagName -m "Your Message"
+// to delete a tag
+git tag -d TagName

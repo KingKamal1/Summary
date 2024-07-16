@@ -1,0 +1,272 @@
+import PropTypes from 'prop-types';
+function Student(props){
+    const studentStyle = {
+        backgroundColor: "black",
+        color: "white",
+        marginLeft: "10px",
+        width: "calc(100% - 10px)",
+    }
+
+    return(
+        <div className="student" style={studentStyle} >
+            <p>Name    : {props.name}</p>
+            <p>Age     : {props.age}</p>
+            <p>Student : {props.isStudent}</p>
+        </div>x 
+    );
+}
+Student.propTypes = {
+    name: PropTypes.string,
+    age: PropTypes.number,
+    isStudent: PropTypes.bool,
+}
+Student.defaultProps = {
+    name: "Guest",
+    age: 0,
+    isStudent: false,
+}
+//================================================================================================
+function Btn(){
+    const handle1 =
+        () => console.log("btn is clicked")
+    const handle2 =
+        () => console.log("you are hovering over the button")
+    return {
+        <button onClick={handle1} onMouseOver={handle2} >
+        button text
+        </button>
+    }
+}
+//================================================================================================
+function DateField(){
+    const [date , setDate] = React.useState(new Date())
+    function handleClick(){
+    	setDate(new Date())
+    }
+    return {
+    	<div className={todaysDate}>
+    	<p> Today's Date is {date} </p>
+    	<button onClick={handleClick}> Update the DATE </button>
+    	</div>
+    }
+}
+//================================================================================================
+import Image from "./assets/images/SomePicture.png"
+function ImageField(){
+    return {
+        <img src={image} alt="alternative text" />                                      // method 1
+        <img src={require("./assets/images/SomePicture.png")} alt="alternative text" /> // method 2
+    }
+}
+import ReactPlayer from "./react/ReactPlayer"
+function VideoField(props){
+    videoURL = props.link;
+    return {
+        <ReactPlayer
+            url={videoURL}
+            playing={false}
+            volume={0.5}
+        />
+    }
+}
+//================================================================================================
+function ConditionalComponent(props){
+    const age = props.age;
+    const isGreen = props.color;
+    const available = props.available;
+    return{
+        <div>
+            {age >= 18 ? <h1>You are allowed</h1> : <h1>You are not allowed</h1>}
+            <h2 style={{color: isGreen? "green" : "red"}}>Your Color Is {isGreen? "Green" : "Red"}</h2>
+            {available && <button>You are welcomed</button>}
+        </div>
+    }
+}
+//================================================================================================
+// the state is a way to update variable value in all components when it changes
+import {useState} from "react";
+function increaseAge(age) {
+    // the original code
+    // age = age + 1;
+    // document.getElementById("age").innerHTML = age;
+    // ==============================
+    // React Code
+    setAge(age + 1);
+}
+function Counter(props){
+    // initalAge = 0;                                             
+    const [age,setAge] = useState(initialAge);
+    return {
+        <button onClick={increaseAge}>Increase age</button>
+    }
+}
+//================================================================================================
+// in seperated module or component
+import {useEffect} from "react";
+function seperatedComponent(props){
+    // any time this component is created or deleted in/from the page it will call useEffect function
+    useEffect(() => {
+        // some code when mounted
+        return () => {
+            // some code when unmounted
+        }
+    });
+}
+//================================================================================================
+// Router is when the address you visit is the next
+// localhost.com:3000/
+import {BrowserRouter as Router, Routes , Route , link} from "react-router-dom";
+function routerComponent(props){
+    <Router>
+        <h1>
+        NAVBAR
+        <link to={"/"} > Home </link>
+        </h1>
+        <Routes>
+            <Route path="/" element={<home />}/> // render home page when you are in the path "/"
+        </Routes>
+    </Router>
+}
+//================================================================================================
+// context is an array of states to avoid multiple inherited states in children
+function First(){
+    const {username, setUsername} = useState("");
+    return {
+        <Second username={setUsername} />
+    }
+}
+function Second(props){
+    return {
+        <Bottom username={props.username} />
+    }
+}
+function Third(props){
+    return {
+        <ChangeUsername setUsername={props.setUsername} />
+    }
+}
+// the new way is
+import createContext from "react";
+const AppContext = createContext();
+function App(){
+    <AppContext.Provider value={{username,setUsername}} />
+        <First />
+        <Second />
+        <Third />
+    </AppContext.Provider>
+}
+    import {useContext} from "react";
+    import {AppContext} from "../App";
+function Third(){
+    const username = useContext(AppContext);
+    return {
+        <ChangeUsername setUsername={setUsername} />
+    }
+}
+//================================================================================================
+// Professional fetching data method
+import {QueryClient , QueryClientProvider} from "@tanstack/react-query";
+function App(){
+    // you can remove default options , it's just to customize fetching data characteristics
+    const client_1 = new QueryClient({defaultOptions: {
+        queries: {
+            refetchOnWindowFocus: false, // don't refetch the data when switching tabs
+        },
+    }});
+    return {
+    <QueryClientProvider client={client_1} />
+        <Component />
+    </QueryClientProvider>
+    }
+}
+import {useQuery} from "@tanstack/react-query";
+import Axios from "axios";
+function Component(){
+    const {data , isloading , isError , refetch} = useQuery(["fetchingID"],() =>{
+        return Axios.get("API_link").then((res) => res.data);
+    })
+    if (isLoading){
+        return <h1>Loading</h1>;
+    }
+    if (isError){
+        return <h1>Error</h1>;
+    }
+    return {
+        <h1>{data?.key}</h1> // we put the ? mark to make delay until the data is fetched
+        <button onClick={refetch} > Update Data </button>
+    }
+}
+//================================================================================================
+function Form(){
+    // define how the object will look like
+    const schema = new yup.object().shape({
+        fullName: yup.string().required(),
+        email: yup.string().email().required(),
+        age: yup.number().positive().integer().min(18).required(),
+        password: yup.string().min(8).max(16).required(),
+        confirmedPassword: yup.string().oneOf([yup.ref("password"),null]).required(),
+    });
+    const {register , handleSubmit} = useForm({
+        resolver: yupResolver(schema),  // create an object with this schema
+    });
+    const onSubmit = (data) => {
+        console.log(data);
+    };
+    return {
+        <form onSubmit={handleSubmit(onSubmit)}>
+            <input type="text" placeholder="full name" {...register(fullName)} /> // register => define the key of the data in object
+            <input type="text" placeholder="email" {...register(email)} />
+            <input type="number" placeholder="age" {...register(age)} />
+            <input type="password" placeholder="password" {...register(password)} />
+            <input type="password" placeholder="password" {...register(confirmedPassword)} />
+            <button onClick={onSubmit}>Submit</button> // do onSubmit function when you click the button
+        </form>
+    }
+}
+//================================================================================================
+// to create a Hook is to create a complete useState with additional functions
+export const useCount = (initalVal = 0)=>{
+    const [count , setCount] = useState(initalVal);
+    const increase = () => {
+        setCount((prev) => prev + 1);
+    }
+    const decrease = () => {
+        setCount((prev) => prev - 1);
+    }
+    const restart = () => {
+        setCount(0);
+    }
+    return {count , increase , decrease , restart};
+}
+// Another Example
+export const useToggle = (initialVal = false) => {
+    const [state , setState] = useState(initalVal);
+    const toggle = () => {
+        setState((prev) => !prev);
+    };
+    return [state , toggle];
+}
+//================================================================================================
+//================================================================================================
+//================================================================================================
+//================================================================================================
+function App(){
+    const {count , increase , decrease , restart} = useCount();
+    return(
+        <Student name="Kamal" age={20} isStudent={true} />
+        <Btn />
+        <DateField />
+        <ImageField />
+        <VideoField link="https://youtube.com/freecodecamp/001" />
+        <ConditionalComponent age=20 color=true available=true/>
+        <Counter />
+        <Form />
+        <CounterField >
+            {count}
+            <button onClick={increase}>Increase</button>
+            <button onClick={decrease}>decrease</button>
+            <button onClick={restart}>restart</button>
+        </CounterField>
+    );
+}
+export default App;

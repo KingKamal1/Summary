@@ -1,0 +1,840 @@
+.selectedItem {
+  /* to change the color */
+  color: value;
+  /* to make the background stay in the page while scrolling */
+  background-attachment: fixed;
+  /* to define background position */
+  background-position: center center;
+  /* 
+    to define background size :
+    cover   => not all the background visible
+    contain => all the background visible
+    */
+  background-size: cover;
+  /*
+    to add space before the text use :
+    padding => space between the text and the container from the inside
+    margin => space between the text and the container from outside
+    */
+  padding: 10px;
+  margin: 10px;
+  /*
+    to make a border between the text and the container
+    border:width color type;
+    */
+  border-width: 10px;
+  border-color: black;
+  border-style: solid;
+  /* to make the border circled */
+  border-radius: 4px;
+  /*
+    Display types :
+    block        =>
+            - take the full width if you didn't define width
+            - add line break before and after
+            - respect padding , margin , width and height from every direction
+    inline       =>
+            - doesn't take the full width
+            - don't add line break
+            - don't respect width and height and respect padding and margin from only right and left
+    inline-block =>
+            - doesn't take the full width
+            - don't add line break
+            - respect padding , margin , width and height from every direction
+    */
+  display: block;
+  /*
+    to hide something in the page :
+    display: none;      => hide from the workflow   ** element doesn't exist in the page
+    visibility: hidden; => hide from the page only  ** element is exist but hidden
+    */
+  visibility: hidden;
+  /* to make the width as the width of element content */
+  width: fit-content;
+}
+
+/*====================================================================================*/
+/* to propreties instead of writing the same proprety more and more */
+.one,
+.two,
+.three,
+.four {
+  /* propreties */
+  padding: 10px;
+  margin: 15px;
+  background-color: #eee;
+  border-bottom: 2px solid black;
+}
+
+/* ====================================================================================== */
+/* to make specified width and height to big element you can do this */
+.big-text {
+  width: 100px;
+  height: 100px;
+  /* if the content bigger than the defined size make it scroll or auto to can see the over flow */
+  overflow: auto;
+}
+
+/* ====================================================================================== */
+.text {
+  /* to make the text in the middle */
+  text-align: center;
+  /* to make shadow for the text */
+  text-shadow: 1px 1px 1px rgba(255, 230, 150, 0.5);
+  /* to define the direction of writing */
+  direction: ltr;
+  /* to decorate the text */
+  text-decoration: none;
+  /* to capitalize or lower case */
+  text-transform: lowercase;
+  /* ===================== */
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  /* to add a space before the text */
+  text-indent: 50px;
+  /* to set the height between lines */
+  line-height: 1.6;
+  /* for the text wrapping */
+  white-space: nowrap;
+  /* to abbreviate the link to make it shorter */
+  word-break: break-all;
+  /* to the strength of the font */
+  font-weight: 500;
+  /* to change writing direction */
+  writing-mode: vertical-lr;
+}
+
+.input-field[type="text"] {
+  /* to make the color of pointer of writing have a different color */
+  caret-color: purple;
+}
+
+/* ==================================================================================== */
+/* measure units */
+/*
+        px      => simple unit
+        em      => 1 time of the inherted size ( if the parent is 20 px and you wrote 2em then it will be 2 x 20 px = 40px )
+        rem     => 1 time of the html element ( if the html element equal 50px and you wrote 2rem then it will be 2 x 50 px = 100px )
+        %       => the precent of the parent ( if the parent is 100 px and you wrote 120% then it will be (120/100) x 100 px = 120px )
+        vw      => 1 vw is equal to 1% of the full width of the page
+        vh      => 1 vh is equal to 1% of the full height of the page
+*/
+/* ============================================================================= */
+.mouse {
+  /*
+		pointer	=> a hand to show that you can click
+		grap	=> a closed hand to grap something
+		move    => two vertices with angular 90 deg to show that you can move element
+	*/
+  cursor: pointer;
+}
+
+/* ============================================================================= */
+/* position */
+.item {
+  /*
+		static		=> related to itself and doesn't interact with other orders ( the default value )
+		relative	=> now you can use top and bottom , left and right ( related to its current position )
+		absolute    => related to a parent position !! the parent must be relative or it will put the top and left as just a start point
+		fixed       => related to the page itself even if you scrolled down
+		sticky		=> as fixed but it's much late !! start in a place but when it arrive some place you defined it become fixed
+	*/
+  position: absolute;
+}
+
+/* ================================================================================= */
+.layer {
+  /*
+		the less number the first layer it become
+	*/
+  z-index: 0;
+  /* the first layer */
+}
+
+/* ========================================================================================= */
+/* how to style a list */
+ul {
+  /* the icons before the list */
+  list-style-type: disc;
+  /* if the styles include the icon or not */
+  list-style-position: outside;
+}
+
+/* ========================================================================================= */
+table {
+  width: 100%;
+  border: 2px solid #eee;
+}
+
+table td {
+  background-color: cadetblue;
+  color: blueviolet;
+  padding: 15px;
+  text-align: center;
+  border-spacing: 2px;
+}
+
+/* ================================================================================ */
+/* to edit the status of the element */
+a {
+  text-decoration: none;
+  color: aqua;
+}
+
+a:hover {
+  color: purple;
+  font-size: 1.2em;
+}
+
+a:visited {
+  color: brown;
+}
+
+/* ==================================================================================== */
+/* before and after and content */
+.box {
+  position: relative;
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  /*==================*/
+  width: 5px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: cyan;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  /*==================*/
+  width: 20px;
+  height: 20px;
+  left: -10px;
+  top: 50%;
+  margin-top: -10px;
+}
+
+/* counter */
+.box {
+  position: relative;
+  counter-increment: counterName;
+}
+
+.box::after {
+  content: counter(counterName);
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  right: 0px;
+  text-align: center;
+  font-weight: bold;
+  bottom: 0;
+  background-color: aqua;
+  color: blue;
+}
+
+/*======================================================================================*/
+/* to make shadow for a card a box a div or anything anyways */
+/* vertical herzontal blur spread/size in_the_element_or_out */
+.card {
+  padding: 20px;
+  background-color: #eee;
+  margin: 10px auto;
+  width: 300px;
+  box-shadow: 2px 2px 2px 0px outset;
+  border-radius: 2px;
+}
+
+/*======================================================================================*/
+/* to define how the browser handles the padding and border and margin */
+.unknown {
+  /* box size */
+  /*
+	content-box => doesn't respect your height and width all it matter is the content of the box
+	border-box => respect your height and width whatever the boder and padding or even the margin is
+	*/
+  box-sizing: border-box;
+}
+
+/*======================================================================================*/
+/* Transition */
+.Element {
+  background-color: #eee;
+  width: 300px;
+  height: 300px;
+  transition-duration: 5s;
+  transition-delay: 0.5s;
+  transition-timing-function: ease-in-out;
+  transition-property: all;
+}
+
+/*======================================================================================*/
+.selected {
+  /* to make this property apply what ever is written */
+  background-color: aqua !important;
+}
+
+/*======================================================================================*/
+/* Variables */
+:root {
+  --main-color: aqua;
+  --main-transition: 0.3s;
+  --main-height: 100vh;
+  --main-width: 100%;
+  --main-padding: 20px;
+}
+
+.element {
+  color: var(--main-color);
+  height: var(--main-height);
+}
+
+/*======================================================================================*/
+/* Flex box */
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* shortcut */
+  flex-flow: row wrap;
+  /*
+		justify content
+			flex-start		=> with the start of the parent
+			flex-end		=> with the end of the parent
+			center			=> put the elements in the center horizontally
+			space-between	=> space between elements
+			space-evenly	=> put the space after and before and between each element with same percents
+			space-around	=> put the space after and before and between each element with different percents
+	*/
+  justify-content: space-evenly;
+  /*
+		align items
+			stretch			=> take the full height
+			flex-start		=> put elements in the start vertically
+			flex-end		=> put elements in the end vertically
+			center			=> put elements in the center vertically
+	*/
+  align-items: center;
+  /*
+		align content
+			flex-start		=> put all the elements in the start vertically
+			flex-end		=> put all the elements in the end vertically
+			space-between 	=> put space between all elements vertically
+			space-around	=> put the space after and before and between all the elements with different percents
+			space-evenly	=> put space after and before and between all the elements vertically
+	*/
+  align-content: space-evenly;
+  /* 
+		flex grow makes the element stretch horizontally to fit the full width of the parent element
+			if you defined for all elements flex-grow 1 and spcial element flex-grow 2
+			this spcial element will grow double of any other element
+	*/
+  flex-grow: 1;
+  /* 
+		flex shrink makes the element get smaller horizontally to fit the mini width it can take
+			if you defined for all elements flex-shrink 1 and spcial element flex-shrink 2
+			this spcial element will get smaller double of any other element
+	*/
+  flex-shrink: 1;
+  /* order define the position of some element */
+  order: 5;
+  /* to difine some length in width or height , it really doesn't matter , it depend on direction */
+  /* 300px for width if direction is horizontal and 300px for height if direction is vertical */
+  flex-basis: 300px;
+  /* align self	(proprety) => deal with one element */
+  /* ======================================================================== */
+  /*  
+  flex:1
+  Sets the flex-grow property to 1.
+  Sets the flex-basis property to 0.
+  This means that the element will grow to fill any available space, but it will not start with any initial size.
+  flex-grow:1
+  Sets the flex-grow property to 1.
+  Leaves the flex-basis property at its default value of auto.
+  This means that the element will grow to fill any available space, but it will start with its own initial size. 
+  */
+}
+
+/* ================================================================================================= */
+/* filter */
+.img {
+  transition: 0.3s;
+  filter: grayscale(100%);
+}
+
+.img:hover {
+  filter: grayscale(0%);
+}
+
+/* ================================================================================================= */
+/* Gradient */
+/* linearGradient{ direction || angluar , color1 [ percent => optional ] , color2 [ percent => optional ] , ... } */
+div {
+  background-image: linear-gradient(45deg, aqua, blue);
+}
+
+/* ================================================================================================= */
+/* Grid system */
+.grid {
+  display: grid;
+  /*
+		how many columns in the system
+			// first_column_size		second_column_size		third_column_size		........etc
+	*/
+  grid-template-columns: 100px 50em 25rem 25% 50vw 100ch auto 1fr 30cm 40vb;
+  /*
+		how many rows in the system
+			// first_row_size		second_row_size		third_row_size		........etc
+	*/
+  grid-template-rows: repeat(4, 100px);
+  /* to make responsive layout you can use the next grid system */
+  /*
+	when the width is able to divided into sections each section 300px it will be divided but if it bigger but not enough to make a column
+	extend the already existed columns to take the left space 
+	*/
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  /* gap => the margin of the elements */
+  gap: 10px;
+  row-gap: 15px;
+  column-gap: 15px;
+  /* the system of distribution ( . => empty column ) */
+  grid-template-areas: "logo logo . nav nav nav nav nav nav nav",
+    "cont cont cont cont cont cont cont side side side",
+    "foot foot foot foot foot foot foot foot foot foot";
+}
+
+.firstElement {
+  /* the first element will take all the columns form the second column to number 4 */
+  grid-column: 2 / 5;
+  grid-column: 2 span 3;
+}
+
+.element {
+  /* start from the first row and the second column and take 2 (1 , 2) rows and 2 (2 , 3) columns */
+  grid-area: 1 / 2 / 3 / 4;
+  grid-row-start: 1;
+  grid-column-start: 2;
+  grid-row-end: 3;
+  grid-column: 4;
+}
+
+h2 {
+  grid-area: logo;
+}
+
+nav {
+  grid-area: nav;
+}
+
+section {
+  grid-area: cont;
+}
+
+aside {
+  grid-area: side;
+}
+
+footer {
+  grid-area: foot;
+}
+
+/* ================================================================================================= */
+/* transform */
+.box {
+  /* scale */
+  transform: scaleX(1.5);
+  transform: scaleY(2);
+  transform: scale(1.5, 2);
+  /* degree => 180 radian => 3.14 */
+  transform: rotateX(45deg);
+  transform: rotateY(90deg);
+  transform: rotate(45deg, 90deg);
+  /* translate */
+  transform: translate(100px, 2rem);
+  /* skew */
+  transform: skewX(10deg);
+  transform: skewY(20deg);
+  transform: skew(10deg, 20deg);
+  /* matrix ( scaleX , skewY , skewX , scaleY , translateX , translateY ) */
+  transform: matrix(1.2, 0.2679, 0, 1.2, 20, 20);
+  /* origin */
+  transform-origin: (50%, 50%);
+  /* to use the 3d transform the parent element must have the proprety prespective: the_length_between_you_and_the_child_element */
+  /* the parent */
+  perspective: 500px;
+  /* the child */
+  transform: translate3d(10px, 20px, 50px);
+}
+
+/* ================================================================================================= */
+/* Animatons */
+@keyframes NameOfAnimaton {
+  0% {
+    background-color: blue;
+  }
+
+  30% {
+    background-color: aqua;
+  }
+
+  70% {
+    background-color: #eee;
+  }
+
+  100% {
+    background-color: white;
+  }
+}
+
+.element {
+  animation-delay: 2s;
+  animation-duration: 3s;
+  animation-name: NameOfAnimation;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  /* alternate => normal then reversed */
+  animation-direction: normal;
+  /*
+		fill-mode
+			forwards 	=> take the last animation frame ( the propreties at 100% of the animation keyframes )
+			backwards	=> take the first animation frame ( the propreties at 0% of the animation keyframes )
+			both		=> take the last animation frame ( the propreties at the end of animation whatever the direction is )
+	*/
+  animation-fill-mode: forwards;
+  /* if paused , the animation will stop */
+  animation-play-state: running;
+  /* animation: AnimaitonName duration timing-function delay iteraction-count direction */
+  animation: NameOfAnimaiton 3s ease-in-out 2s infinite normal;
+}
+
+/* ========================================================================================== */
+/* if some element has two or more classes and you want to target that element */
+/* class ="class-one class-two ..." => this as attribute in the element you target */
+.class-one.class-two {
+  /* propreties */
+  background-color: #eee;
+  font-weight: bold;
+  font-size: 14px;
+  color: deeppink;
+  padding: 20px;
+  margin: 30px;
+}
+
+/* to take the element which has a class but not like others */
+p.class-name {
+  /* this means any paragraph that has the class "class-name" but not any element just paragraphs */
+  padding-left: 20px;
+  margin: 25px;
+  font-weight: bold;
+  font-size: 3em;
+  color: rebeccapurple;
+}
+
+/* the direct child from a parent */
+.parent > .child {
+  color: purple;
+  background-color: aqua;
+}
+
+/* to decorate an element after another element */
+div + p {
+  /*
+	decorate any paragraph that follow a div 
+	!! for example look at the next lines
+	div........div
+	p......p
+	*/
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+}
+
+/* to target all the elements that are from the same parent after the specifier */
+p ~ div {
+  /* any div after a paragraph but both the div and the paragraph are from the same parent */
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* any element has an attribute ( the attribute maybe title , control , src ....etc ) !! putting a value is optional */
+[attribute] {
+  color: aqua;
+}
+
+/* any paragraph has an attribute ( the attribute maybe title , control , src ....etc ) !! putting a value is optional */
+p[attribute] {
+  color: purple;
+}
+
+/*
+	[title]								=> any element has a title as attribute
+	[title = "text value longString"]	=> any element has the the value in attribute
+	[title ~= "value"]					=> any element has the value in attribute as a single word
+	[title *= "value"]					=> any element has the value in attribute as part of a long string
+*/
+/* ========================================================================================== */
+/* Selecting selector */
+div:first-child {
+  /* first element in a parent */
+  background-color: plum;
+}
+
+div:last-child {
+  /* last element in a parent */
+  background-color: aqua;
+}
+
+div:first-of-type {
+  background-color: cadetblue;
+}
+
+div:last-of-type {
+  background-color: cornflowerblue;
+}
+
+div:nth-child(5) {
+  background-color: cyan;
+}
+
+/* ========================================================================================== */
+/* Media queries and Responsive design */
+@media (max-width: 1000px) {
+  .element1 {
+    background-color: darkcyan;
+  }
+
+  .parent {
+    width: 700px;
+  }
+}
+
+/* ========================================================================================== */
+/* to edit the scroll button */
+::-webkit-scrollbar {
+  /* the width of scroll button */
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  /* the background of scroll button */
+  background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+  /* the color of scroll button */
+  background-color: blue;
+}
+
+/* ========================================================================================== */
+input[type="checkbox"] {
+  /* to hide the sign square you do the next */
+  appearance: none;
+}
+
+/* ========================================================================================== */
+/* Start Global Rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-transition: 0.3s;
+  --main-padding-section: 100px;
+  --section-background: #ececec;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* condidtions */
+@media (min-width: 768px) and (min-width: 992px) {
+  p {
+    color: black;
+  }
+}
+
+/* to make the text cut in some place by ... */
+.title {
+  overflow: hidden;
+  /* to apply the clamp proprety */
+  display: -webkit-box;
+  /* if the line exceeded 2 line cut it */
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* to make an aside */
+aside {
+  /* to make when you exceed the full height you can scroll */
+  overflow-y: auto;
+}
+
+/* to make the photo stay at the same position in scrolling */
+.img {
+  background-attachment: fixed;
+}
+
+/* when you scroll between container 1 and container 2 but you stayed in the middle */
+.container {
+  /* if you wrote x then these propreties will be applied for only the x-axis */
+  /* you will back to the nearest container */
+  scroll-snap-type: x proximity;
+  /* you will pass to what you were scrolling for */
+  scroll-snap-type: x mandatory;
+}
+
+/* writing animation */
+.text {
+  position: relative;
+  /*
+    because when the before layer quit the text it doesn't show up
+  */
+  overflow: hidden;
+}
+
+.text:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  /* 
+    to make the sense that it is typing but the actually the before layer is moving to right with the same color of background
+  */
+  border-right: 2px solid var(--background-color);
+  animation: typing 2s infinite;
+}
+
+@keyframes typing {
+  80% {
+    left: 100%;
+  }
+}
+
+/* ================================================================ */
+/* to add specific value in tailwind */
+/* 
+  in html
+  <div class="w-[600px]"></div>
+
+  or
+
+  in tailwind config write in extend field
+  width{
+    600:"600px"
+  }
+  then in html
+  <div class="w-600"></div>
+*/
+/* ================================================================== */
+ul li a,
+ol li a {
+  color: blue;
+}
+
+:is(ul, ol) li a {
+  /* :is() is more specified */
+  color: blue;
+}
+
+main h1,
+main h2,
+main h3 {
+  color: orange;
+}
+
+main :where(h1, h2, h3) {
+  /* :where() is lower specified */
+  color: orange;
+}
+
+.parent:has(a, span) {
+  /* the has attribute check if the tags in parenthes are exist or not */
+  color: blue;
+}
+/* =================================================================== */
+/* nesting */
+.parent {
+  color: red;
+  &:hover {
+    color: rgba(255, 0, 0, 0.5);
+  }
+  .child {
+    color: blue;
+    &:hover {
+      color: rgba(0, 0, 255, 0.5);
+    }
+    & .grand-child {
+      color: green;
+    }
+    &:hover .grand-child {
+      color: rgba(0, 128, 0, 0.5);
+    }
+  }
+}
+/* =================================================================== */
+:nth-child(2 of .definedClass) {
+  /* now you count by class name not the number of child or kind of type */
+  color: blue;
+}
+/* =================================================================== */
+.paragraph {
+  /* you can't select the text */
+  user-select: none;
+  /* when select it will select all at once */
+  user-select: all;
+}
+/* =================================================================== */

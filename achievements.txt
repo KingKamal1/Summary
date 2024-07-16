@@ -1,0 +1,22 @@
+// Front End
+react                       front end framework
+jest
+pugjs
+glupjs
+typescript
+// Back End
+node.js
+express.js
+mongo
+// What I learned
+html
+css
+font awesome                icons library
+sass
+javascript
+php
+mySql
+git and github              version control tool
+tailwinds
+bootstrap                   front end framework
+cpp

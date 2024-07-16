@@ -1,0 +1,37 @@
+create database Data_Base; -- to create a database (folder)
+drop database DB; -- to delete a database
+alter database DB read only = 1; -- to make the database DB read only (can access but can't modify or delete)
+create table tableName( -- create a file (like the spreedsheet in excel)
+	col_1 int,	-- first column will hold data of type integer
+    col_2 varchar(30),	-- second column will hold data of type string with maximum size 30 character
+    col_3 decimal,	-- third column will hold data of type decimal
+    col_4 date	-- fourth column will hold data of type date
+);
+rename table tableName to table_name; -- to change table name
+drop table tableName; -- to delete the table from the folder (schima)
+select * from table_name; -- to start showing all the data in the file
+alter table table_name; -- to start editing in a file
+add col_5 bool; -- adding the column of type boolean after using alter table tableName
+modify column col_5 char; -- change the data type of column 5 from boolean to character
+insert into table_name; -- to choose where to put values
+values (1,"kamal",0.1,"2023-1-1",'a'); -- the values to be added into the first row (the data of the first element)
+select * from table_name where col_1 = 1; -- return the row in which the first column has a value of 1
+update table_name; -- to update data in the table
+set col_4 = "2004-7-18"; -- set the value of column 4 to 2004/7/18 to all elements or you can specify the place by writing where condition
+delete from table_name where col_1 = 1; -- delete the row which has value of 1 in column one
+commit; -- to save restore point
+rollback; -- to back to that restore point
+alter table table_name add constraint unique(col_6); -- to make a column has no double of the same value no two elements share the same value
+alter table table_name add constraint primary key(col_1); -- to create a primary key
+create table transations(
+	transation_id int primary key auto_increment, -- primary key with automatic icrement
+    amount decimal(5,2), -- a decimal value of 5 digits and 2 of them are after the  partation
+    customer_id int, -- column of id
+    foreign key(customer_id) references customers(customer_id) -- a foreign key that connect two tables together
+);
+-- to connect two tables with a forign key you can do the next
+select*
+from transations inner join customers
+on transations.customer_id = customers.customer_id;
+select * from table_name where col_1 like "K%"; -- display any row has in column 1 value of k + any or more characters
+FOREIGN KEY (doctor_id) REFERENCES teacher(id) ON DELETE CASCADE;

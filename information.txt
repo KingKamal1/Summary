@@ -1,0 +1,133 @@
+In software engineering, a framework is a reusable set of code that provides a structure for building software applications.
+Frameworks typically include pre-written code, libraries, and APIs that can be used to speed up the development process.
+They also provide a common design pattern that can be used to make applications more consistent and easier to maintain.
+
+Frameworks can be used for a variety of purposes, including:
+
+* **Web development:** Frameworks like Django, Ruby on Rails, and Laravel provide a foundation for building web applications.
+* **Mobile development:** Frameworks like React Native, Flutter, and Ionic allow developers to build cross-platform mobile applications.
+* **Backend development:** Frameworks like Spring Boot, Express.js, and Flask provide a foundation for building web services.
+* **Data science:** Frameworks like TensorFlow, PyTorch, and scikit-learn provide a foundation for building machine learning models.
+
+Frameworks can be a valuable tool for software developers, but they are not always necessary.
+In some cases, it may be faster and easier to build an application from scratch.
+However, frameworks can be a great way to save time and effort, especially for large or complex applications.
+
+Here are some of the benefits of using frameworks:
+
+* **Increased productivity:** Frameworks can help developers to be more productive by providing pre-written code and libraries.
+* **Reduced development time:** Frameworks can help to reduce the development time of applications by providing a common design pattern and reusable code.
+* **Improved consistency:** Frameworks can help to improve the consistency of applications by providing a common design pattern.
+* **Enhanced scalability:** Frameworks can help to enhance the scalability of applications by providing a foundation for building scalable applications.
+
+Here are some of the drawbacks of using frameworks:
+
+* **Learning curve:** Frameworks can have a steep learning curve, especially for developers who are new to them.
+* **Tight coupling:** Frameworks can be tightly coupled to specific programming languages or technologies,
+                      which can make it difficult to use them with other languages or technologies.
+* **Vendor lock-in:** Frameworks can be vendor-locked, which means that developers may be limited to using the framework from a specific vendor.
+
+Overall, frameworks can be a valuable tool for software developers, but they are not always necessary.
+In some cases, it may be faster and easier to build an application from scratch.
+However, frameworks can be a great way to save time and effort, especially for large or complex applications.
+
+// =================================================================================================================
+
+Object-oriented programming (OOP) is a programming paradigm that treats data as an object.
+An object is a self-contained entity that has data and methods associated with it.
+The data is called the object's state, and the methods are called the object's behavior.
+
+OOP is based on four main principles:
+
+* **Encapsulation:** This principle states that all important information is contained inside an object and only select information is exposed.
+                     This characteristic of data hiding provides greater program security and avoids unintended data corruption.
+* **Abstraction:**   This principle allows us to focus on the essential features of an object without getting bogged down in the details.
+                     For example, we can create an object for a car without having to worry about the details of how the car works.
+* **Inheritance:**   This principle allows us to create new objects that inherit the properties and methods of existing objects.
+                     This makes it easier to reuse code and to create complex objects from simpler ones.
+* **Polymorphism:**  This principle allows us to treat different objects in the same way, even though they may have different underlying implementations.
+                     For example, we can write a function that takes an object as input and performs some operation on it,
+                     without having to know what type of object it is.
+
+OOP is a powerful programming paradigm that can be used to create complex and flexible software.
+It is used in a wide variety of programming languages, including Java, C++, Python, and JavaScript.
+
+Here is an example of object-oriented programming:
+
+```
+class Car:
+  def __init__(self, model, color, year):
+    self.model = model
+    self.color = color
+    self.year = year
+
+  def drive(self):
+    print("The car is driving.")
+
+  def stop(self):
+    print("The car is stopping.")
+
+my_car = Car("Honda Civic", "Blue", 2023)
+my_car.drive()
+my_car.stop()
+```
+
+In this example, we create a class called `Car`. This class has three attributes: `model`, `color`, and `year`.
+It also has two methods: `drive()` and `stop()`.
+
+We then create an object called `my_car` from the `Car` class.
+We pass the values "Honda Civic", "Blue", and 2023 to the `__init__()` method of the `Car` class.
+This initializes the attributes of the `my_car` object.
+
+We then call the `drive()` and `stop()` methods of the `my_car` object.
+These methods print the messages "The car is driving." and "The car is stopping." respectively.
+
+This is a simple example of object-oriented programming. OOP can be used to create much more complex and sophisticated software.
+
+// =================================================================================================================
+msys update
+- Download Msys
+- pacman -Syu
+- pacman -Su
+- Go to 64bit
+- pacman -Ss gcc
+- pacman -S mingw-w64-x86_64-gcc
+- pacman -Ss gdb
+- pacman -S mingw-w64-x86_64-gdb
+- Go to Edit system Environment
+- C:\msys64\mingw64\bin
+// =================================================================================================================
+onclick
+- only one function
+- only one behaviour ( click )
+- can be added to html file
+addEventlistener
+- more than one function
+- more than one behaviour ( click , scroll , leave , ... )
+- can be added to element has not been created yet
+- can't be added to html file
+// =================================================================================================================
+win alt r // record the screen
+win g // open the recorded videos of screen
+ctrl win shift b // reset for screen card (when there is a lag)
+win shift s // screenshot 
+// =================================================================================================================
+npm install -D tailwindcss
+npx tailwindcss init
+// =====================
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./dist/**/*.{html,js}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+// =====================
+in src input file
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+// ==========================
+npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+// ======================================================================================================================

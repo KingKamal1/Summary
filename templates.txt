@@ -1,0 +1,4450 @@
+// switch button
+// html
+<div class="toggle-wrapper">
+  <input class="toggle-checkbox" type="checkbox">
+  <div class="toggle-container">  
+    <div class="toggle-button">
+      <div class="toggle-button-circles-container">
+        <div class="toggle-button-circle"></div>
+        <div class="toggle-button-circle"></div>
+        <div class="toggle-button-circle"></div>
+        <div class="toggle-button-circle"></div>
+        <div class="toggle-button-circle"></div>
+        <div class="toggle-button-circle"></div>
+        <div class="toggle-button-circle"></div>
+        <div class="toggle-button-circle"></div>
+        <div class="toggle-button-circle"></div>
+        <div class="toggle-button-circle"></div>
+        <div class="toggle-button-circle"></div>
+        <div class="toggle-button-circle"></div>
+      </div>
+    </div>
+  </div>
+</div>
+// css
+.toggle-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: .5em;
+  padding: .125em;
+  background-image: linear-gradient(to bottom, #d5d5d5, #e8e8e8);
+  box-shadow: 0 1px 1px rgb(255 255 255 / .6);
+  /* resize for demo */
+  font-size: 1.5em;
+}
+.toggle-checkbox {
+  appearance: none;
+  position: absolute;
+  z-index: 1;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  /* fix em sizing */
+  font: inherit;
+  opacity: 0;
+  cursor: pointer;
+}
+.toggle-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-radius: .375em;
+  width: 3em;
+  height: 1.5em;
+  background-color: #e8e8e8;
+  box-shadow: inset 0 0 .0625em .125em rgb(255 255 255 / .2), inset 0 .0625em .125em rgb(0 0 0 / .4);
+  transition: background-color .4s linear;
+}
+.toggle-checkbox:checked + .toggle-container {
+  background-color: #f3b519;
+}
+.toggle-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: .0625em;
+  border-radius: .3125em;
+  width: 1.375em;
+  height: 1.375em;
+  background-color: #e8e8e8;
+  box-shadow: inset 0 -.0625em .0625em .125em rgb(0 0 0 / .1), inset 0 -.125em .0625em rgb(0 0 0 / .2), inset 0 .1875em .0625em rgb(255 255 255 / .3), 0 .125em .125em rgb(0 0 0 / .5);
+  transition: left .4s;
+}
+.toggle-checkbox:checked + .toggle-container > .toggle-button {
+  left: 1.5625em;
+}
+.toggle-button-circles-container {
+  display: grid;
+  grid-template-columns: repeat(3, min-content);
+  gap: .125em;
+  position: absolute;
+  margin: 0 auto;
+}
+.toggle-button-circle {
+  border-radius: 50%;
+  width: .125em;
+  height: .125em;
+  background-image: radial-gradient(circle at 50% 0, #f5f5f5, #c4c4c4);
+}
+// ========================================================================================
+// normal button
+// html
+<button>
+  Button
+</button>
+// css
+button {
+  width: 150px;
+  height: 60px;
+  border: 3px solid #315cfd;
+  border-radius: 45px;
+  transition: all 0.3s;
+  cursor: pointer;
+  background: white;
+  font-size: 1.2em;
+  font-weight: 550;
+  font-family: 'Montserrat', sans-serif;
+}
+button:hover {
+  background: #315cfd;
+  color: white;
+  font-size: 1.5em;
+}
+// ========================================================================================
+// switch button
+// html
+<label class="switch">
+    <input checked="" type="checkbox">
+    <div class="slider">
+        <div class="circle">
+            <svg class="cross" xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 365.696 365.696" y="0" x="0" height="6" width="6" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                    <path data-original="#000000" fill="currentColor" d="M243.188 182.86 356.32 69.726c12.5-12.5 12.5-32.766 0-45.247L341.238 9.398c-12.504-12.503-32.77-12.503-45.25 0L182.86 122.528 69.727 9.374c-12.5-12.5-32.766-12.5-45.247 0L9.375 24.457c-12.5 12.504-12.5 32.77 0 45.25l113.152 113.152L9.398 295.99c-12.503 12.503-12.503 32.769 0 45.25L24.48 356.32c12.5 12.5 32.766 12.5 45.247 0l113.132-113.132L295.99 356.32c12.503 12.5 32.769 12.5 45.25 0l15.081-15.082c12.5-12.504 12.5-32.77 0-45.25zm0 0"></path>
+                </g>
+            </svg>
+            <svg class="checkmark" xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 24 24" y="0" x="0" height="10" width="10" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                    <path class="" data-original="#000000" fill="currentColor" d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"></path>
+                </g>
+            </svg>
+        </div>
+    </div>
+</label>
+// css
+.switch {
+  /* switch */
+  --switch-width: 46px;
+  --switch-height: 24px;
+  --switch-bg: rgb(131, 131, 131);
+  --switch-checked-bg: rgb(0, 218, 80);
+  --switch-offset: calc((var(--switch-height) - var(--circle-diameter)) / 2);
+  --switch-transition: all .2s cubic-bezier(0.27, 0.2, 0.25, 1.51);
+  /* circle */
+  --circle-diameter: 18px;
+  --circle-bg: #fff;
+  --circle-shadow: 1px 1px 2px rgba(146, 146, 146, 0.45);
+  --circle-checked-shadow: -1px 1px 2px rgba(163, 163, 163, 0.45);
+  --circle-transition: var(--switch-transition);
+  /* icon */
+  --icon-transition: all .2s cubic-bezier(0.27, 0.2, 0.25, 1.51);
+  --icon-cross-color: var(--switch-bg);
+  --icon-cross-size: 6px;
+  --icon-checkmark-color: var(--switch-checked-bg);
+  --icon-checkmark-size: 10px;
+  /* effect line */
+  --effect-width: calc(var(--circle-diameter) / 2);
+  --effect-height: calc(var(--effect-width) / 2 - 1px);
+  --effect-bg: var(--circle-bg);
+  --effect-border-radius: 1px;
+  --effect-transition: all .2s ease-in-out;
+}
+.switch input {
+  display: none;
+}
+.switch {
+  display: inline-block;
+}
+.switch svg {
+  -webkit-transition: var(--icon-transition);
+  -o-transition: var(--icon-transition);
+  transition: var(--icon-transition);
+  position: absolute;
+  height: auto;
+}
+.switch .checkmark {
+  width: var(--icon-checkmark-size);
+  color: var(--icon-checkmark-color);
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+.switch .cross {
+  width: var(--icon-cross-size);
+  color: var(--icon-cross-color);
+}
+.slider {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: var(--switch-width);
+  height: var(--switch-height);
+  background: var(--switch-bg);
+  border-radius: 999px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  -webkit-transition: var(--switch-transition);
+  -o-transition: var(--switch-transition);
+  transition: var(--switch-transition);
+  cursor: pointer;
+}
+.circle {
+  width: var(--circle-diameter);
+  height: var(--circle-diameter);
+  background: var(--circle-bg);
+  border-radius: inherit;
+  -webkit-box-shadow: var(--circle-shadow);
+  box-shadow: var(--circle-shadow);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-transition: var(--circle-transition);
+  -o-transition: var(--circle-transition);
+  transition: var(--circle-transition);
+  z-index: 1;
+  position: absolute;
+  left: var(--switch-offset);
+}
+.slider::before {
+  content: "";
+  position: absolute;
+  width: var(--effect-width);
+  height: var(--effect-height);
+  left: calc(var(--switch-offset) + (var(--effect-width) / 2));
+  background: var(--effect-bg);
+  border-radius: var(--effect-border-radius);
+  -webkit-transition: var(--effect-transition);
+  -o-transition: var(--effect-transition);
+  transition: var(--effect-transition);
+}
+/* actions */
+.switch input:checked+.slider {
+  background: var(--switch-checked-bg);
+}
+.switch input:checked+.slider .checkmark {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+.switch input:checked+.slider .cross {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+.switch input:checked+.slider::before {
+  left: calc(100% - var(--effect-width) - (var(--effect-width) / 2) - var(--switch-offset));
+}
+.switch input:checked+.slider .circle {
+  left: calc(100% - var(--circle-diameter) - var(--switch-offset));
+  -webkit-box-shadow: var(--circle-checked-shadow);
+  box-shadow: var(--circle-checked-shadow);
+}
+// ========================================================================================
+// check box
+// html
+<label for="checkbox1" class="checkbox">
+  <span class="label">Checkbox</span>
+  <input type="checkbox" id="checkbox1" checked="">
+  <span class="checkmark"></span>
+</label>
+// css
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  font-family: Arial, sans-serif;
+  color: black;
+}
+.checkbox input {
+  display: none;
+}
+.checkbox .checkmark {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #ffffff2b;
+  box-shadow: rgba(0, 0, 0, 0.62) 0px 0px 5px inset, rgba(0, 0, 0, 0.21) 0px 0px 0px 24px inset,
+        #22cc3f 0px 0px 0px 0px inset, rgba(224, 224, 224, 0.45) 0px 1px 0px 0px;
+  cursor: pointer;
+  position: relative;
+}
+.checkbox .checkmark::after {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #e3e3e3;
+  box-shadow: transparent 0px 0px 0px 2px, rgba(0, 0, 0, 0.3) 0px 6px 6px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.3s ease-in-out;
+}
+.checkbox input:checked + .checkmark {
+  background-color: #22cc3f;
+  box-shadow: rgba(0, 0, 0, 0.62) 0px 0px 5px inset, #22cc3f 0px 0px 0px 2px inset, #22cc3f 0px 0px 0px 24px inset,
+        rgba(224, 224, 224, 0.45) 0px 1px 0px 0px;
+}
+.checkbox input:checked + .checkmark::after {
+  background-color: white;
+}
+.checkbox .label {
+  margin-right: 10px;
+  user-select: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+// ========================================================================================
+// cool button with animated text
+// html
+<button alt="tony stark">
+  <i>t</i>
+  <i>o</i>
+  <i>n</i>
+  <i>y</i>
+  <i>&nbsp;</i>
+  <i>s</i>
+  <i>t</i>
+  <i>a</i>
+  <i>r</i>
+  <i>k</i>
+</button>
+// css
+button {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: 50px;
+ position: relative;
+ padding: 0 20px;
+ font-size: 18px;
+ text-transform: uppercase;
+ border: 0;
+ box-shadow: hsl(210deg 87% 36%) 0px 7px 0px 0px;
+ background-color: hsl(210deg 100% 44%);
+ border-radius: 12px;
+ overflow: hidden;
+ transition: 31ms cubic-bezier(.5, .7, .4, 1);
+}
+button:before {
+ content: attr(alt);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ position: absolute;
+ inset: 0;
+ font-size: 15px;
+ font-weight: bold;
+ color: white;
+ letter-spacing: 4px;
+ opacity: 1;
+}
+button:active {
+ box-shadow: none;
+ transform: translateY(7px);
+ transition: 35ms cubic-bezier(.5, .7, .4, 1);
+}
+button:hover:before {
+ transition: all .0s;
+ transform: translateY(100%);
+ opacity: 0;
+}
+button i {
+ color: white;
+ font-size: 15px;
+ font-weight: bold;
+ letter-spacing: 4px;
+ font-style: normal;
+ transition: all 2s ease;
+ transform: translateY(-20px);
+ opacity: 0;
+}
+button:hover i {
+ transition: all .2s ease;
+ transform: translateY(0px);
+ opacity: 1;
+}
+button:hover i:nth-child(1) {
+ transition-delay: 0.045s;
+}
+button:hover i:nth-child(2) {
+ transition-delay: calc(0.045s * 3);
+}
+button:hover i:nth-child(3) {
+ transition-delay: calc(0.045s * 4);
+}
+button:hover i:nth-child(4) {
+ transition-delay: calc(0.045s * 5);
+}
+button:hover i:nth-child(6) {
+ transition-delay: calc(0.045s * 6);
+}
+button:hover i:nth-child(7) {
+ transition-delay: calc(0.045s * 7);
+}
+button:hover i:nth-child(8) {
+ transition-delay: calc(0.045s * 8);
+}
+button:hover i:nth-child(9) {
+ transition-delay: calc(0.045s * 9);
+}
+button:hover i:nth-child(10) {
+ transition-delay: calc(0.045s * 10);
+}
+// ========================================================================================
+// switch with animated color
+// html
+<div class="bauble_box">
+	<input class="bauble_input" id="bauble_check" name="bauble" type="checkbox">
+	<label class="bauble_label" for="bauble_check">Toggle</label>
+</div>
+// css
+.bauble_box .bauble_label {
+  background: #2c2;
+  background-position: 62px 5px;
+  background-repeat: no-repeat;
+  background-size: auto 5px;
+  border: 0;
+  border-radius: 50px;
+  box-shadow: inset 0 10px 20px rgba(0,0,0,.4), 0 -1px 0px rgba(0,0,0,.2), inset 0 -1px 0px #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0;
+  height: 40px;
+  position: relative;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+  width: 90px;
+}
+.bauble_box .bauble_label:before {
+  background-color: rgba(255,255,255,.2);
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: 30% auto;
+  border-radius: 50%;
+  box-shadow: inset 0 -5px 25px #050, 0 10px 20px rgba(0,0,0,.4);
+  content: '';
+  display: block;
+  height: 30px;
+  left: 5px;
+  position: absolute;
+  top: 6px;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+  width: 30px;
+  z-index: 2;
+}
+.bauble_box input.bauble_input {
+  opacity: 0;
+  z-index: 0;
+}
+/* Checked */
+.bauble_box input.bauble_input:checked + .bauble_label {
+  background-color: #c22;
+}
+.bauble_box input.bauble_input:checked + .bauble_label:before {
+  background-position: 150% 0;
+  box-shadow: inset 0 -5px 25px #500, 0 10px 20px rgba(0,0,0,.4);
+  left: calc( 100% - 35px );
+}
+// ========================================================================================
+// check box
+// html
+<label class="cyberpunk-checkbox-label">
+<input class="cyberpunk-checkbox" type="checkbox">
+Check me</label>
+// css
+.cyberpunk-button {
+  background-color: #30cfd0;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 25px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.cyberpunk-checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #30cfd0;
+  border-radius: 5px;
+  background-color: transparent;
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.cyberpunk-checkbox:before {
+  content: "";
+  background-color: #30cfd0;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+.cyberpunk-checkbox:checked:before {
+  transform: translate(-50%, -50%) scale(1);
+}
+.cyberpunk-checkbox-label {
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+}
+// ========================================================================================
+// list button turn into x when you press it
+// html
+ <input type="checkbox" id="checkbox">
+    <label for="checkbox" class="toggle">
+        <div class="bars" id="bar1"></div>
+        <div class="bars" id="bar2"></div>
+        <div class="bars" id="bar3"></div>
+    </label>
+// css
+#checkbox {
+  display: none;
+}
+.toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition-duration: .5s;
+}
+.bars {
+  width: 100%;
+  height: 4px;
+  background-color: rgb(176, 92, 255);
+  border-radius: 4px;
+}
+#bar2 {
+  transition-duration: .8s;
+}
+#bar1,#bar3 {
+  width: 70%;
+}
+#checkbox:checked + .toggle .bars {
+  position: absolute;
+  transition-duration: .5s;
+}
+#checkbox:checked + .toggle #bar2 {
+  transform: scaleX(0);
+  transition-duration: .5s;
+}
+#checkbox:checked + .toggle #bar1 {
+  width: 100%;
+  transform: rotate(45deg);
+  transition-duration: .5s;
+}
+#checkbox:checked + .toggle #bar3 {
+  width: 100%;
+  transform: rotate(-45deg);
+  transition-duration: .5s;
+}
+#checkbox:checked + .toggle {
+  transition-duration: .5s;
+  transform: rotate(180deg);
+}
+// ========================================================================================
+// check box
+// html
+<label class="checkbox-btn">
+    <label for="checkbox"></label>
+    <input id="checkbox" type="checkbox">
+    <span class="checkmark"></span>
+</label>
+// css
+/* Customize the label (the checkbox-btn) */
+.checkbox-btn {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* Hide the browser's default checkbox */
+.checkbox-btn input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkbox-btn label {
+  cursor: pointer;
+  font-size: 14px;
+}
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border: 2.5px solid #ffffff;
+  transition: .2s linear;
+}
+.checkbox-btn input:checked ~ .checkmark {
+  background-color: transparent;
+}
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  left: 50%;
+  top: 40%;
+  width: 10px;
+  height: 14px;
+  border: 2px solid #0ea021;
+  filter: drop-shadow(0px 0px 10px #0ea021);
+  border-width: 0 2.5px 2.5px 0;
+  transition: .2s linear;
+  transform: translate(-50%, -50%) rotate(-90deg) scale(0.2);
+}
+/* Show the checkmark when checked */
+.checkbox-btn input:checked ~ .checkmark:after {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  animation: pulse 1s ease-in;
+}
+.checkbox-btn input:checked ~ .checkmark {
+  transform: rotate(45deg);
+  border: none;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1.6);
+  }
+}
+// ========================================================================================
+// normal switch button with blue color
+// html
+<label class="switch">
+  <input type="checkbox">
+  <span class="slider"></span>
+</label>
+// css
+.switch {
+ --button-width: 3.5em;
+ --button-height: 2em;
+ --toggle-diameter: 1.5em;
+ --button-toggle-offset: calc((var(--button-height) - var(--toggle-diameter)) / 2);
+ --toggle-shadow-offset: 10px;
+ --toggle-wider: 3em;
+ --color-grey: #cccccc;
+ --color-green: #4296f4;
+}
+.slider {
+ display: inline-block;
+ width: var(--button-width);
+ height: var(--button-height);
+ background-color: var(--color-grey);
+ border-radius: calc(var(--button-height) / 2);
+ position: relative;
+ transition: 0.3s all ease-in-out;
+}
+.slider::after {
+ content: "";
+ display: inline-block;
+ width: var(--toggle-diameter);
+ height: var(--toggle-diameter);
+ background-color: #fff;
+ border-radius: calc(var(--toggle-diameter) / 2);
+ position: absolute;
+ top: var(--button-toggle-offset);
+ transform: translateX(var(--button-toggle-offset));
+ box-shadow: var(--toggle-shadow-offset) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+ transition: 0.3s all ease-in-out;
+}
+.switch input[type="checkbox"]:checked + .slider {
+ background-color: var(--color-green);
+}
+.switch input[type="checkbox"]:checked + .slider::after {
+ transform: translateX(calc(var(--button-width) - var(--toggle-diameter) - var(--button-toggle-offset)));
+ box-shadow: calc(var(--toggle-shadow-offset) * -1) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+}
+.switch input[type="checkbox"] {
+ display: none;
+}
+.switch input[type="checkbox"]:active + .slider::after {
+ width: var(--toggle-wider);
+}
+.switch input[type="checkbox"]:checked:active + .slider::after {
+ transform: translateX(calc(var(--button-width) - var(--toggle-wider) - var(--button-toggle-offset)));
+}
+// ========================================================================================
+// normal button
+// html
+<button class="button">
+    <span class="button-content">Download </span>
+</button>
+// css
+.button {
+  position: relative;
+  overflow: hidden;
+  height: 3rem;
+  padding: 0 2rem;
+  border-radius: 1.5rem;
+  background: #3d3a4e;
+  background-size: 400%;
+  color: #fff;
+  border: none;
+}
+.button:hover::before {
+  transform: scaleX(1);
+}
+.button-content {
+  position: relative;
+  z-index: 1;
+}
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(
+    82.3deg,
+    rgba(150, 93, 233, 1) 10.8%,
+    rgba(99, 88, 238, 1) 94.3%
+  );
+  transition: all 0.475s;
+}
+// ========================================================================================
+// cool list of elements
+// html
+<div class="radio-inputs">
+		<label>
+			<input class="radio-input" type="radio" name="engine">
+				<span class="radio-tile">
+					<span class="radio-icon">
+						<svg stroke="currentColor" xml:space="preserve" viewBox="0 0 493.407 493.407" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="Capa_1" version="1.1" width="200px" height="200px" fill="none"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <path d="M488.474,270.899c-12.647-37.192-47.527-62.182-86.791-62.182c-5.892,0-11.728,0.749-17.499,1.879l-34.324-100.94 c-1.71-5.014-6.417-8.392-11.721-8.392H315.02c-6.836,0-12.382,5.547-12.382,12.382c0,6.836,5.545,12.381,12.382,12.381h14.252 l12.462,36.645H206.069v-21.998l21.732-2.821c3.353-0.434,6.135-3.079,6.585-6.585c0.54-4.183-2.402-8.013-6.585-8.553l-68.929-8.94 c-1.362-0.168-2.853-0.185-4.281,0c-9.116,1.186-15.55,9.537-14.373,18.653c1.185,9.118,9.537,15.55,18.653,14.364l22.434-2.909 v26.004l-41.255,52.798c-14.059-8.771-30.592-13.93-48.349-13.93C41.135,208.757,0,249.885,0,300.443 c0,50.565,41.135,91.7,91.701,91.7c44.882,0,82.261-32.437,90.113-75.095h33.605v12.647h-5.909c-4.563,0-8.254,3.693-8.254,8.254 c0,4.563,3.691,8.254,8.254,8.254h36.58c4.563,0,8.254-3.691,8.254-8.254c0-4.561-3.691-8.254-8.254-8.254h-5.908v-12.647h5.545 c3.814,0,7.409-1.756,9.755-4.756l95.546-122.267l9.776,28.729c-17.854,8.892-32.444,22.965-41.409,41.168 c-10.825,21.973-12.438,46.842-4.553,70.034c12.662,37.201,47.55,62.189,86.815,62.189c10.021,0,19.951-1.645,29.519-4.9 c23.191-7.885,41.926-24.329,52.744-46.302C494.746,318.966,496.367,294.09,488.474,270.899z M143.46,258.542 c7.698,9.488,12.776,21.014,14.349,33.742h-40.717L143.46,258.542z M91.701,367.379c-36.912,0-66.938-30.026-66.938-66.936 c0-36.904,30.026-66.923,66.938-66.923c12.002,0,23.11,3.427,32.864,8.981l-42.619,54.54c-2.917,3.732-3.448,8.794-1.378,13.05 c2.08,4.256,6.4,6.957,11.134,6.957h64.592C148.861,345.906,122.84,367.379,91.701,367.379z M239.69,292.284h-56.707 c-1.839-20.667-10.586-39.329-23.868-53.782l22.191-28.398v32.47c0,6.836,5.545,12.381,12.381,12.381 c6.836,0,12.382-5.545,12.382-12.381v-55.138h115.553L239.69,292.284z M383.546,285.618l6.384,18.79 c1.75,5.151,6.562,8.392,11.721,8.392c1.321,0,2.667-0.21,3.99-0.661c6.471-2.201,9.93-9.23,7.729-15.711l-6.336-18.637 c7.731,1.838,14.221,7.312,16.855,15.083c2.024,5.94,1.613,12.309-1.161,17.935c-2.773,5.626-7.569,9.835-13.509,11.858 c-12.068,4.078-25.716-2.717-29.785-14.671C376.735,300.055,378.597,291.689,383.546,285.618z M461.712,329.994 c-7.908,16.042-21.579,28.044-38.507,33.808c-6.997,2.378-14.244,3.578-21.547,3.578c-28.664,0-54.129-18.249-63.374-45.399 c-5.757-16.926-4.571-35.081,3.328-51.112c6.047-12.27,15.494-22.112,27.165-28.666l8.981,26.416 c-13.414,10.108-19.644,27.931-13.954,44.691c5.522,16.227,20.732,27.124,37.853,27.124c4.378,0,8.707-0.725,12.882-2.145 c10.108-3.434,18.282-10.607,22.999-20.184c4.723-9.585,5.425-20.435,1.982-30.551c-5.545-16.299-21.57-26.787-38.289-26.818 l-8.997-26.472c3.128-0.453,6.28-0.783,9.448-0.783c28.658,0,54.112,18.242,63.351,45.399 C470.788,295.799,469.613,313.96,461.712,329.994z"></path> </g></svg>
+					</span>
+					<span class="radio-label">Bicycle</span>
+				</span>
+		</label>
+		<label>
+			<input checked="" class="radio-input" type="radio" name="engine">
+			<span class="radio-tile">
+				<span class="radio-icon">
+   				<svg stroke="currentColor" xml:space="preserve" viewBox="0 0 467.168 467.168" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="Capa_1" version="1.1" fill="none"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M76.849,210.531C34.406,210.531,0,244.937,0,287.388c0,42.438,34.406,76.847,76.849,76.847 c30.989,0,57.635-18.387,69.789-44.819l18.258,14.078c0,0,134.168,0.958,141.538-3.206c0,0-16.65-45.469,4.484-64.688 c2.225-2.024,5.021-4.332,8.096-6.777c-3.543,8.829-5.534,18.45-5.534,28.558c0,42.446,34.403,76.846,76.846,76.846 c42.443,0,76.843-34.415,76.843-76.846c0-42.451-34.408-76.849-76.843-76.849c-0.697,0-1.362,0.088-2.056,0.102 c5.551-3.603,9.093-5.865,9.093-5.865l-5.763-5.127c0,0,16.651-3.837,12.816-12.167c-3.848-8.33-44.19-58.28-44.19-58.28 s7.146-15.373-7.634-26.261l-7.098,15.371c0,0-18.093-12.489-25.295-10.084c-7.205,2.398-18.005,3.603-21.379,8.884l-3.358,3.124 c0,0-0.95,5.528,4.561,13.693c0,0,55.482,17.05,58.119,29.537c0,0,3.848,7.933-12.728,9.844l-3.354,4.328l-8.896,0.479 l-16.082-36.748c0,0-15.381,4.082-23.299,10.323l1.201,6.24c0,0-64.599-43.943-125.362,21.137c0,0-44.909,12.966-76.37-26.897 c0,0-0.479-12.968-76.367-10.565l5.286,5.524c0,0-5.286,0.479-7.444,3.841c-2.158,3.358,1.2,6.961,18.494,6.961 c0,0,39.153,44.668,69.17,42.032l42.743,20.656l18.975,32.42c0,0,0.034,2.785,0.23,7.045c-4.404,0.938-9.341,1.979-14.579,3.09 C139.605,232.602,110.832,210.531,76.849,210.531z M390.325,234.081c29.395,0,53.299,23.912,53.299,53.299 c0,29.39-23.912,53.294-53.299,53.294c-29.394,0-53.294-23.912-53.294-53.294C337.031,257.993,360.932,234.081,390.325,234.081z M76.849,340.683c-29.387,0-53.299-23.913-53.299-53.295c0-29.395,23.912-53.299,53.299-53.299 c22.592,0,41.896,14.154,49.636,34.039c-28.26,6.011-56.31,11.99-56.31,11.99l3.619,19.933l55.339-2.444 C124.365,322.116,102.745,340.683,76.849,340.683z M169.152,295.835c1.571,5.334,3.619,9.574,6.312,11.394l-24.696,0.966 c1.058-3.783,1.857-7.666,2.338-11.662L169.152,295.835z"></path> </g> </g> </g></svg>
+				</span>
+				<span class="radio-label">Motorbike</span>
+			</span>
+		</label>
+		<label>
+			<input class="radio-input" type="radio" name="engine">
+			<span class="radio-tile">
+				<span class="radio-icon">
+    			<svg stroke="currentColor" xml:space="preserve" viewBox="0 0 324.018 324.017" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="Capa_1" version="1.1" fill="none"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M317.833,197.111c3.346-11.148,2.455-20.541-2.65-27.945c-9.715-14.064-31.308-15.864-35.43-16.076l-8.077-4.352 l-0.528-0.217c-8.969-2.561-42.745-3.591-47.805-3.733c-7.979-3.936-14.607-7.62-20.475-10.879 c-20.536-11.413-34.107-18.958-72.959-18.958c-47.049,0-85.447,20.395-90.597,23.25c-2.812,0.212-5.297,0.404-7.646,0.59 l-6.455-8.733l7.34,0.774c2.91,0.306,4.267-1.243,3.031-3.459c-1.24-2.216-4.603-4.262-7.519-4.57l-23.951-2.524 c-2.91-0.305-4.267,1.243-3.026,3.459c1.24,2.216,4.603,4.262,7.519,4.57l3.679,0.386l8.166,11.05 c-13.823,1.315-13.823,2.139-13.823,4.371c0,18.331-2.343,22.556-2.832,23.369L0,164.443v19.019l2.248,2.89 c-0.088,2.775,0.823,5.323,2.674,7.431c5.981,6.804,19.713,7.001,21.256,7.001c4.634,0,14.211-2.366,20.78-4.153 c-0.456-0.781-0.927-1.553-1.3-2.392c-0.36-0.809-0.603-1.668-0.885-2.517c-0.811-2.485-1.362-5.096-1.362-7.845 c0-14.074,11.449-25.516,25.515-25.516s25.52,11.446,25.52,25.521c0,6.068-2.221,11.578-5.773,15.964 c-0.753,0.927-1.527,1.828-2.397,2.641c-1.022,0.958-2.089,1.859-3.254,2.641c29.332,0.109,112.164,0.514,168.708,1.771 c-0.828-0.823-1.533-1.771-2.237-2.703c-0.652-0.854-1.222-1.75-1.761-2.688c-2.164-3.744-3.5-8.025-3.5-12.655 c0-14.069,11.454-25.513,25.518-25.513c14.064,0,25.518,11.449,25.518,25.513c0,5.126-1.553,9.875-4.152,13.878 c-0.605,0.922-1.326,1.755-2.04,2.594c-0.782,0.922-1.616,1.781-2.527,2.584c5.209,0.155,9.699,0.232,13.546,0.232 c19.563,0,23.385-1.688,23.861-5.018C324.114,202.108,324.472,199.602,317.833,197.111z"></path> <path d="M52.17,195.175c3.638,5.379,9.794,8.922,16.756,8.922c0.228,0,0.44-0.062,0.663-0.073c2.576-0.083,5.043-0.61,7.291-1.574 c1.574-0.678,2.996-1.6,4.332-2.636c4.782-3.702,7.927-9.429,7.927-15.933c0-11.144-9.066-20.216-20.212-20.216 s-20.213,9.072-20.213,20.216c0,2.263,0.461,4.411,1.149,6.446c0.288,0.85,0.616,1.673,1.015,2.471 C51.279,193.606,51.667,194.434,52.17,195.175z"></path> <path d="M269.755,209.068c2.656,0,5.173-0.549,7.503-1.481c1.589-0.642,3.06-1.491,4.422-2.495 c1.035-0.767,1.988-1.616,2.863-2.559c3.34-3.604,5.432-8.389,5.432-13.681c0-11.144-9.071-20.21-20.215-20.21 s-20.216,9.066-20.216,20.21c0,4.878,1.812,9.3,4.702,12.801c0.818,0.989,1.719,1.89,2.708,2.713 c1.311,1.088,2.729,2.024,4.293,2.755C263.836,208.333,266.704,209.068,269.755,209.068z"></path> </g> </g> </g></svg>
+				</span>
+				<span class="radio-label">Car</span>
+			</span>
+		</label>
+</div>
+// css
+.radio-inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 350px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.radio-inputs > * {
+  margin: 6px;
+}
+.radio-input:checked + .radio-tile {
+  border-color: #2260ff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  color: #2260ff;
+}
+.radio-input:checked + .radio-tile:before {
+  transform: scale(1);
+  opacity: 1;
+  background-color: #2260ff;
+  border-color: #2260ff;
+}
+.radio-input:checked + .radio-tile .radio-icon svg {
+  fill: #2260ff;
+}
+.radio-input:checked + .radio-tile .radio-label {
+  color: #2260ff;
+}
+.radio-input:focus + .radio-tile {
+  border-color: #2260ff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 4px #b5c9fc;
+}
+.radio-input:focus + .radio-tile:before {
+  transform: scale(1);
+  opacity: 1;
+}
+.radio-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  min-height: 80px;
+  border-radius: 0.5rem;
+  border: 2px solid #b5bfd9;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.15s ease;
+  cursor: pointer;
+  position: relative;
+}
+.radio-tile:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 2px solid #b5bfd9;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 0.25rem;
+  left: 0.25rem;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.25s ease;
+}
+.radio-tile:hover {
+  border-color: #2260ff;
+}
+.radio-tile:hover:before {
+  transform: scale(1);
+  opacity: 1;
+}
+.radio-icon svg {
+  width: 2rem;
+  height: 2rem;
+  fill: #494949;
+}
+.radio-label {
+  color: #707070;
+  transition: 0.375s ease;
+  text-align: center;
+  font-size: 13px;
+}
+.radio-input {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+// ========================================================================================
+// list of elements
+// html
+<div class="container">
+	<form>
+		<label>
+			<input type="radio" name="radio" checked="">
+			<span>HTML</span>
+		</label>
+		<label>
+			<input type="radio" name="radio">
+			<span>CSS</span>
+		</label>
+		<label>
+			<input type="radio" name="radio">
+			<span>Javascript</span>
+		</label>
+	</form>
+</div>
+// css
+.container form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.container label {
+  display: flex;
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.375em;
+}
+.container  label input {
+  position: absolute;
+  left: -9999px;
+}
+.container label input:checked + span {
+  background-color: #414181;
+  color: white;
+}
+.container label input:checked + span:before {
+  box-shadow: inset 0 0 0 0.4375em #00005c;
+}
+.container label span {
+  display: flex;
+  align-items: center;
+  padding: 0.375em 0.75em 0.375em 0.375em;
+  border-radius: 99em;
+  transition: 0.25s ease;
+  color: #414181;
+}
+.container label span:hover {
+  background-color: #d6d6e5;
+}
+.container label span:before {
+  display: flex;
+  flex-shrink: 0;
+  content: "";
+  background-color: #fff;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  margin-right: 0.375em;
+  transition: 0.25s ease;
+  box-shadow: inset 0 0 0 0.125em #00005c;
+}
+// ========================================================================================
+// text button
+// html
+<button>
+    <p>Text me</p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path>
+    </svg>
+</button>
+// css
+button {
+  background-color: #fff;
+  border: 1px solid #25D366;
+  padding: 5px;
+  position: relative;
+  width: 6.2em;
+  height: 2em;
+  transition: 0.5s;
+  font-size: 17px;
+  border-radius: 0.4em;
+}
+button p {
+  position: absolute;
+  top: 0.4em;
+  left: 1.15em;
+  margin: 0;
+  padding: 0;
+  transition: .5s;
+  color: #25D366;
+}
+button svg {
+  position: absolute;
+  top: 0.45em;
+  right: 0.5em;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  transition: 0.5s;
+  height: 1em;
+  fill: #fff
+}
+button:hover p {
+  left: 0.5em;
+  color: #fff
+}
+button:hover svg {
+  opacity: 1;
+}
+button:hover {
+  background-color: #25D366;
+}
+// ========================================================================================
+// input field
+// html
+<div class="container">
+  <input required="" type="text" name="text" class="input">
+  <label class="label">Username</label>
+</div>
+// css
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  position: relative;
+  color: white;
+}
+.container .label {
+  font-size: 15px;
+  padding-left: 10px;
+  position: absolute;
+  top: 13px;
+  transition: 0.3s;
+  pointer-events: none;
+}
+.input {
+  width: 200px;
+  height: 45px;
+  border: none;
+  outline: none;
+  padding: 0px 7px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 15px;
+  background-color: transparent;
+  box-shadow: 3px 3px 10px rgba(0,0,0,1),
+  -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+.input:focus {
+  border: 2px solid transparent;
+  color: #fff;
+  box-shadow: 3px 3px 10px rgba(0,0,0,1),
+  -1px -1px 6px rgba(255, 255, 255, 0.4),
+  inset 3px 3px 10px rgba(0,0,0,1),
+  inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+.container .input:valid ~ .label,
+.container .input:focus ~ .label {
+  transition: 0.3s;
+  padding-left: 2px;
+  transform: translateY(-35px);
+}
+.container .input:valid,
+.container .input:focus {
+  box-shadow: 3px 3px 10px rgba(0,0,0,1),
+  -1px -1px 6px rgba(255, 255, 255, 0.4),
+  inset 3px 3px 10px rgba(0,0,0,1),
+  inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+// ========================================================================================
+// animated pyramid
+// html
+<div class="pyramid-loader">
+  <div class="wrapper">
+    <span class="side side1"></span>
+    <span class="side side2"></span>
+    <span class="side side3"></span>
+    <span class="side side4"></span>
+    <span class="shadow"></span>
+  </div>  
+</div>
+// css
+.pyramid-loader {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: block;
+  transform-style: preserve-3d;
+  transform: rotateX(-20deg);
+}
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: spin 4s linear infinite;
+}
+@keyframes spin {
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+.pyramid-loader .wrapper .side {
+  width: 70px;
+  height: 70px;
+/* you can choose any gradient or color you want */
+  /* background: radial-gradient( #2F2585 10%, #F028FD 70%, #2BDEAC 120%); */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform-origin: center top;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.pyramid-loader .wrapper .side1 {
+  transform: rotateZ(-30deg) rotateY(90deg);
+  background: conic-gradient( #2BDEAC, #F028FD, #D8CCE6, #2F2585);
+}
+.pyramid-loader .wrapper .side2 {
+  transform: rotateZ(30deg) rotateY(90deg);
+  background: conic-gradient( #2F2585, #D8CCE6, #F028FD, #2BDEAC);
+}
+.pyramid-loader .wrapper .side3 {
+  transform: rotateX(30deg);
+  background: conic-gradient( #2F2585, #D8CCE6, #F028FD, #2BDEAC);
+}
+.pyramid-loader .wrapper .side4 {
+  transform: rotateX(-30deg);
+  background: conic-gradient( #2BDEAC, #F028FD, #D8CCE6, #2F2585);
+}
+.pyramid-loader .wrapper .shadow {
+  width: 60px;
+  height: 60px;
+  background: #8B5AD5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform: rotateX(90deg) translateZ(-40px);
+  filter: blur(12px);
+}
+// ========================================================================================
+// text field
+// html
+<div class="form-control">
+  <input class="input input-alt" placeholder="Type something intelligent" required="" type="text">
+  <span class="input-border input-border-alt"></span>
+</div>
+// css
+.input {
+  color: #fff;
+  font-size: 0.9rem;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  padding-inline: 0.5em;
+  padding-block: 0.7em;
+  border: none;
+  border-bottom: var(--border-height) solid var(--border-before-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.input-border {
+  position: absolute;
+  background: var(--border-after-color);
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+.input:focus {
+  outline: none;
+}
+.input:focus + .input-border {
+  width: 100%;
+}
+
+.form-control {
+  position: relative;
+  --width-of-input: 300px;
+}
+.input-alt {
+  font-size: 1.2rem;
+  padding-inline: 1em;
+  padding-block: 0.8em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.input-border-alt {
+  height: 3px;
+  background: linear-gradient(90deg, #FF6464 0%, #FFBF59 50%, #47C9FF 100%);
+  transition: width 0.4s cubic-bezier(0.42, 0, 0.58, 1.00);
+}
+.input-alt:focus + .input-border-alt {
+  width: 100%;
+}
+// ========================================================================================
+// input field
+// html
+<div class="wave-group">
+  <input required="" type="text" class="input">
+  <span class="bar"></span>
+  <label class="label">
+    <span class="label-char" style="--index: 0">N</span>
+    <span class="label-char" style="--index: 1">a</span>
+    <span class="label-char" style="--index: 2">m</span>
+    <span class="label-char" style="--index: 3">e</span>
+  </label>
+</div>
+// css
+.wave-group {
+  position: relative;
+}
+.wave-group .input {
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 200px;
+  border: none;
+  border-bottom: 1px solid #515151;
+  background: transparent;
+}
+.wave-group .input:focus {
+  outline: none;
+}
+.wave-group .label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  display: flex;
+}
+.wave-group .label-char {
+  transition: 0.2s ease all;
+  transition-delay: calc(var(--index) * .05s);
+}
+.wave-group .input:focus ~ label .label-char,
+.wave-group .input:valid ~ label .label-char {
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: #5264AE;
+}
+.wave-group .bar {
+  position: relative;
+  display: block;
+  width: 200px;
+}
+.wave-group .bar:before,.wave-group .bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #5264AE;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.wave-group .bar:before {
+  left: 50%;
+}
+.wave-group .bar:after {
+  right: 50%;
+}
+.wave-group .input:focus ~ .bar:before,
+.wave-group .input:focus ~ .bar:after {
+  width: 50%;
+}
+// ========================================================================================
+// animated circle
+// html
+<div class="spinner">
+    <div class="spinner1"></div>
+</div>
+// css
+.spinner {
+  background-image: linear-gradient(rgb(186, 66, 255) 35%,rgb(0, 225, 255));
+  width: 100px;
+  height: 100px;
+  animation: spinning82341 1.7s linear infinite;
+  text-align: center;
+  border-radius: 50px;
+  filter: blur(1px);
+  box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+}
+.spinner1 {
+  background-color: rgb(36, 36, 36);
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  filter: blur(10px);
+}
+@keyframes spinning82341 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+// ========================================================================================
+// list after hovering a card
+// html
+<div class="main">
+  <div class="card">
+    <svg fill-rule="nonzero" height="30px" width="30px" viewBox="0,0,256,256" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="instagram"><g style="mix-blend-mode: normal" text-anchor="none" font-size="none" font-weight="none" font-family="none" stroke-dashoffset="0" stroke-dasharray="" stroke-miterlimit="10" stroke-linejoin="miter" stroke-linecap="butt" stroke-width="1" stroke="none" fill-rule="nonzero"><g transform="scale(8,8)"><path d="M11.46875,5c-3.55078,0 -6.46875,2.91406 -6.46875,6.46875v9.0625c0,3.55078 2.91406,6.46875 6.46875,6.46875h9.0625c3.55078,0 6.46875,-2.91406 6.46875,-6.46875v-9.0625c0,-3.55078 -2.91406,-6.46875 -6.46875,-6.46875zM11.46875,7h9.0625c2.47266,0 4.46875,1.99609 4.46875,4.46875v9.0625c0,2.47266 -1.99609,4.46875 -4.46875,4.46875h-9.0625c-2.47266,0 -4.46875,-1.99609 -4.46875,-4.46875v-9.0625c0,-2.47266 1.99609,-4.46875 4.46875,-4.46875zM21.90625,9.1875c-0.50391,0 -0.90625,0.40234 -0.90625,0.90625c0,0.50391 0.40234,0.90625 0.90625,0.90625c0.50391,0 0.90625,-0.40234 0.90625,-0.90625c0,-0.50391 -0.40234,-0.90625 -0.90625,-0.90625zM16,10c-3.30078,0 -6,2.69922 -6,6c0,3.30078 2.69922,6 6,6c3.30078,0 6,-2.69922 6,-6c0,-3.30078 -2.69922,-6 -6,-6zM16,12c2.22266,0 4,1.77734 4,4c0,2.22266 -1.77734,4 -4,4c-2.22266,0 -4,-1.77734 -4,-4c0,-2.22266 1.77734,-4 4,-4z"></path></g></g></svg>
+  </div>
+  <div class="card">
+    <svg height="30px" width="30px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="twitter"><path d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429"></path></svg>
+  </div>
+  <div class="card">
+    <svg height="30px" width="30px" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" class="dribble"><path d="M20,38.5C9.799,38.5,1.5,30.201,1.5,20S9.799,1.5,20,1.5S38.5,9.799,38.5,20S30.201,38.5,20,38.5z"></path><path d="M20,2c9.925,0,18,8.075,18,18s-8.075,18-18,18S2,29.925,2,20S10.075,2,20,2 M20,1 C9.507,1,1,9.507,1,20s8.507,19,19,19s19-8.507,19-19S30.493,1,20,1L20,1z" fill="#ea4c89"></path><path d="M28.352 36.914c0 0-3.032-21.087-15.63-34.292M1.269 17.848c0 0 24.2 2.117 32.075-11.102M7.804 34.152c0 0 8.624-19.807 31.058-12.194" stroke-miterlimit="10" stroke="#ea4c89" fill="none"></path></svg>
+  </div>
+  <div class="card">
+    <svg height="30px" width="30px" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" class="codepen"><path d="M 25 4 L 4 17.34375 L 4 32.652344 L 25 46 L 46 32.65625 L 46 17.34375 Z M 25 29.183594 L 19.066406 25.070313 L 25 21.023438 L 30.933594 25.070313 Z M 27 17.605469 L 27 9.949219 L 40.429688 18.484375 L 34.410156 22.65625 Z M 23 17.605469 L 15.589844 22.65625 L 9.570313 18.484375 L 23 9.949219 Z M 12.09375 25.042969 L 8 27.832031 L 8 22.203125 Z M 15.570313 27.453125 L 23 32.605469 L 23 40.050781 L 9.589844 31.527344 Z M 27 32.605469 L 34.429688 27.453125 L 40.410156 31.527344 L 27 40.050781 Z M 37.90625 25.042969 L 42 22.203125 L 42 27.832031 Z"></path></svg>
+  </div>
+  <div class="card">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" height="23x" width="23px" class="uiverse">
+    <path fill="url(#paint0_linear_501_142)" d="M38.0481 4.82927C38.0481 2.16214 40.018 0 42.4481 0H51.2391C53.6692 0 55.6391 2.16214 55.6391 4.82927V40.1401C55.6391 48.8912 53.2343 55.6657 48.4248 60.4636C43.6153 65.2277 36.7304 67.6098 27.7701 67.6098C18.8099 67.6098 11.925 65.2953 7.11548 60.6663C2.37183 56.0036 3.8147e-06 49.2967 3.8147e-06 40.5456V4.82927C3.8147e-06 2.16213 1.96995 0 4.4 0H13.2405C15.6705 0 17.6405 2.16214 17.6405 4.82927V39.1265C17.6405 43.7892 18.4805 47.2018 20.1605 49.3642C21.8735 51.5267 24.4759 52.6079 27.9678 52.6079C31.4596 52.6079 34.0127 51.5436 35.6268 49.4149C37.241 47.2863 38.0481 43.8399 38.0481 39.0758V4.82927Z"></path>
+    <path fill="url(#paint1_linear_501_142)" d="M86.9 61.8682C86.9 64.5353 84.9301 66.6975 82.5 66.6975H73.6595C71.2295 66.6975 69.2595 64.5353 69.2595 61.8682V4.82927C69.2595 2.16214 71.2295 0 73.6595 0H82.5C84.9301 0 86.9 2.16214 86.9 4.82927V61.8682Z"></path>
+    <path fill="url(#paint2_linear_501_142)" d="M2.86102e-06 83.2195C2.86102e-06 80.5524 1.96995 78.3902 4.4 78.3902H83.6C86.0301 78.3902 88 80.5524 88 83.2195V89.1707C88 91.8379 86.0301 94 83.6 94H4.4C1.96995 94 0 91.8379 0 89.1707L2.86102e-06 83.2195Z"></path>
+    <defs>
+    <linearGradient gradientUnits="userSpaceOnUse" y2="87.6201" x2="96.1684" y1="0" x1="0" id="paint0_linear_501_142">
+    <stop stop-color="#BF66FF"></stop>
+    <stop stop-color="#6248FF" offset="0.510417"></stop>
+    <stop stop-color="#00DDEB" offset="1"></stop>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" y2="87.6201" x2="96.1684" y1="0" x1="0" id="paint1_linear_501_142">
+    <stop stop-color="#BF66FF"></stop>
+    <stop stop-color="#6248FF" offset="0.510417"></stop>
+    <stop stop-color="#00DDEB" offset="1"></stop>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" y2="87.6201" x2="96.1684" y1="0" x1="0" id="paint2_linear_501_142">
+    <stop stop-color="#BF66FF"></stop>
+    <stop stop-color="#6248FF" offset="0.510417"></stop>
+    <stop stop-color="#00DDEB" offset="1"></stop>
+    </linearGradient>
+    </defs>
+    </svg>
+  </div>
+  <div class="card">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="30px" height="30px" class="discord"><path d="M40,12c0,0-4.585-3.588-10-4l-0.488,0.976C34.408,10.174,36.654,11.891,39,14c-4.045-2.065-8.039-4-15-4s-10.955,1.935-15,4c2.346-2.109,5.018-4.015,9.488-5.024L18,8c-5.681,0.537-10,4-10,4s-5.121,7.425-6,22c5.162,5.953,13,6,13,6l1.639-2.185C13.857,36.848,10.715,35.121,8,32c3.238,2.45,8.125,5,16,5s12.762-2.55,16-5c-2.715,3.121-5.857,4.848-8.639,5.815L33,40c0,0,7.838-0.047,13-6C45.121,19.425,40,12,40,12z M17.5,30c-1.933,0-3.5-1.791-3.5-4c0-2.209,1.567-4,3.5-4s3.5,1.791,3.5,4C21,28.209,19.433,30,17.5,30z M30.5,30c-1.933,0-3.5-1.791-3.5-4c0-2.209,1.567-4,3.5-4s3.5,1.791,3.5,4C34,28.209,32.433,30,30.5,30z"></path></svg>
+  </div>
+  <div class="card">
+    <svg height="30px" width="30px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" class="github"><path d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"></path></svg>
+  </div>
+  <div class="card">
+    <svg height="30px" width="30px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="telegram"><path d="M24 4A20 20 0 1 0 24 44A20 20 0 1 0 24 4Z"></path><path d="M33.95,15l-3.746,19.126c0,0-0.161,0.874-1.245,0.874c-0.576,0-0.873-0.274-0.873-0.274l-8.114-6.733 l-3.97-2.001l-5.095-1.355c0,0-0.907-0.262-0.907-1.012c0-0.625,0.933-0.923,0.933-0.923l21.316-8.468 c-0.001-0.001,0.651-0.235,1.126-0.234C33.667,14,34,14.125,34,14.5C34,14.75,33.95,15,33.95,15z" fill="#fff"></path><path d="M23,30.505l-3.426,3.374c0,0-0.149,0.115-0.348,0.12c-0.069,0.002-0.143-0.009-0.219-0.043 l0.964-5.965L23,30.505z" fill="#b0bec5"></path><path d="M29.897,18.196c-0.169-0.22-0.481-0.26-0.701-0.093L16,26c0,0,2.106,5.892,2.427,6.912 c0.322,1.021,0.58,1.045,0.58,1.045l0.964-5.965l9.832-9.096C30.023,18.729,30.064,18.416,29.897,18.196z" fill="#cfd8dc"></path></svg>
+  </div>
+  <div class="card">
+    <svg xml:space="preserve" viewBox="0 0 256 256" height="30" width="30" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="reddit">
+    <defs>
+    </defs>
+    <g transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" style="stroke: none; border-radius:50%; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;">
+      <circle transform="matrix(1 0 0 1 0 0)" style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill-rule: nonzero; opacity: 1;" r="45" cy="45" cx="45"></circle>
+      <path stroke-linecap="round" transform="matrix(1 0 0 1 0 0)" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill-rule: nonzero; opacity: 1;" d="M 75.011 45 c -0.134 -3.624 -3.177 -6.454 -6.812 -6.331 c -1.611 0.056 -3.143 0.716 -4.306 1.823 c -5.123 -3.49 -11.141 -5.403 -17.327 -5.537 l 2.919 -14.038 l 9.631 2.025 c 0.268 2.472 2.483 4.262 4.955 3.993 c 2.472 -0.268 4.262 -2.483 3.993 -4.955 s -2.483 -4.262 -4.955 -3.993 c -1.421 0.145 -2.696 0.973 -3.4 2.204 L 48.68 17.987 c -0.749 -0.168 -1.499 0.302 -1.667 1.063 c 0 0.011 0 0.011 0 0.022 l -3.322 15.615 c -6.264 0.101 -12.36 2.025 -17.55 5.537 c -2.64 -2.483 -6.801 -2.36 -9.284 0.291 c -2.483 2.64 -2.36 6.801 0.291 9.284 c 0.515 0.481 1.107 0.895 1.767 1.186 c -0.045 0.66 -0.045 1.32 0 1.98 c 0 10.078 11.745 18.277 26.23 18.277 c 14.485 0 26.23 -8.188 26.23 -18.277 c 0.045 -0.66 0.045 -1.32 0 -1.98 C 73.635 49.855 75.056 47.528 75.011 45 z M 30.011 49.508 c 0 -2.483 2.025 -4.508 4.508 -4.508 c 2.483 0 4.508 2.025 4.508 4.508 s -2.025 4.508 -4.508 4.508 C 32.025 53.993 30.011 51.991 30.011 49.508 z M 56.152 62.058 v -0.179 c -3.199 2.405 -7.114 3.635 -11.119 3.468 c -4.005 0.168 -7.919 -1.063 -11.119 -3.468 c -0.425 -0.515 -0.347 -1.286 0.168 -1.711 c 0.447 -0.369 1.085 -0.369 1.544 0 c 2.707 1.98 6.007 2.987 9.362 2.83 c 3.356 0.179 6.667 -0.783 9.407 -2.74 c 0.492 -0.481 1.297 -0.47 1.779 0.022 C 56.655 60.772 56.644 61.577 56.152 62.058 z M 55.537 54.34 c -0.078 0 -0.145 0 -0.224 0 l 0.034 -0.168 c -2.483 0 -4.508 -2.025 -4.508 -4.508 s 2.025 -4.508 4.508 -4.508 s 4.508 2.025 4.508 4.508 C 59.955 52.148 58.02 54.239 55.537 54.34 z"></path>
+    </g>
+    </svg>
+  </div>
+  <p class="text">HOVER<br><br>FOR<br><br>SOCIAL</p>
+  <div class="main_back"></div>
+</div>
+// css
+.main_back {
+  position: absolute;
+  border-radius: 10px;
+  transform: rotate(90deg);
+  width: 11em;
+  height: 11em;
+  background: linear-gradient(270deg, #03a9f4, #cc39a4, #ffb5d2);
+  z-index: -2;
+  box-shadow: inset 0px 0px 180px 5px #ffffff;
+}
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 14em;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+}
+.card {
+  width: 60px;
+  height: 60px;
+  border-top-left-radius: 10px;
+  background: lightgrey;
+  transition: .4s ease-in-out, .2s background-color ease-in-out, .2s background-image ease-in-out;
+  background: rgba(255, 255, 255, 0.596);
+  backdrop-filter: blur(5px);
+  border: 1px solid transparent;
+  -webkit-backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card .instagram {
+  opacity: 0;
+  transition: .2s ease-in-out;
+  fill: #cc39a4;
+}
+.card:nth-child(2) {
+  border-radius: 0px;
+}
+.card:nth-child(2) .twitter {
+  opacity: 0;
+  transition: .2s ease-in-out;
+  fill: #03A9F4;
+}
+.card:nth-child(3) {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 0px;
+}
+.card:nth-child(3) .dribble {
+  opacity: 0;
+  transition: .2s ease-in-out;
+  fill: #ffb5d2;
+}
+.card:nth-child(4) {
+  border-radius: 0px;
+}
+.card:nth-child(4) .codepen {
+  opacity: 0;
+  transition: .2s ease-in-out;
+  fill: black;
+}
+.card:nth-child(5) {
+  border-radius: 0px;
+}
+.card:nth-child(5) .uiverse {
+  position: absolute;
+  margin-left: 0.2em;
+  margin-top: 0.2em;
+  opacity: 0;
+  transition: .2s ease-in-out;
+}
+.card:nth-child(6) {
+  border-radius: 0px;
+}
+.card:nth-child(6) .discord {
+  opacity: 0;
+  transition: .2s ease-in-out;
+  fill: #8c9eff;
+}
+.card:nth-child(7) {
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 0px;
+}
+.card:nth-child(7) .github {
+  opacity: 0;
+  transition: .2s ease-in-out;
+  fill: black;
+}
+.card:nth-child(8) {
+  border-radius: 0px;
+}
+.card:nth-child(8) .telegram {
+  opacity: 0;
+  transition: .2s ease-in-out;
+  fill: #29b6f6;
+}
+.card:nth-child(9) {
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 0px;
+}
+.card:nth-child(9) .reddit {
+  opacity: 0;
+  transition: .2s ease-in-out;
+}
+.main:hover {
+  width: 14em;
+  cursor: pointer;
+}
+.main:hover .main_back {
+  opacity: 0;
+}
+.main:hover .card {
+  margin: .2em;
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+}
+.main:hover .card:nth-child(5) {
+  border: transparent;
+}
+.main:hover .text {
+  opacity: 0;
+  z-index: -3;
+}
+.main:hover .instagram {
+  opacity: 1;
+}
+.main:hover .twitter {
+  opacity: 1;
+}
+.main:hover .dribble {
+  opacity: 1;
+}
+.main:hover .codepen {
+  opacity: 1;
+}
+.main:hover .uiverse {
+  opacity: 1;
+}
+.main:hover .discord {
+  opacity: 1;
+}
+.main:hover .github {
+  opacity: 1;
+}
+.main:hover .telegram {
+  opacity: 1;
+}
+.main:hover .reddit {
+  opacity: 1;
+}
+.card:nth-child(1):hover {
+  background-color: #cc39a4;
+}
+.card:nth-child(1):hover .instagram {
+  fill: white;
+}
+.card:nth-child(2):hover {
+  background-color: #03A9F4;
+}
+.card:nth-child(2):hover .twitter {
+  fill: white;
+}
+.card:nth-child(3):hover {
+  background-color: #ffb5d2;
+}
+.card:nth-child(3):hover .dribble {
+  fill: white;
+}
+.card:nth-child(4):hover {
+  background-color: #1E1F26;
+}
+.card:nth-child(4):hover .codepen {
+  fill: white;
+}
+.card:nth-child(5):hover {
+  animation: backgroundIMG .1s;
+  animation-fill-mode: forwards;
+}
+.card:nth-child(5):hover .uiverse #paint0_linear_501_142 stop {
+  stop-color: white;
+}
+.card:nth-child(5):hover .uiverse #paint1_linear_501_142 stop {
+  stop-color: white;
+}
+.card:nth-child(5):hover .uiverse #paint2_linear_501_142 stop {
+  stop-color: white;
+}
+@keyframes backgroundIMG {
+  100% {
+    background-image: linear-gradient(#BF66FF,#6248FF,#00DDEB);
+  }
+}
+.card:nth-child(6):hover {
+  background-color: #8c9eff;
+}
+.card:nth-child(6):hover .discord {
+  fill: white;
+}
+.card:nth-child(7):hover {
+  background-color: black;
+}
+.card:nth-child(7):hover .github {
+  fill: white;
+}
+.card:nth-child(8):hover {
+  background-color: #29b6f6;
+}
+.card:nth-child(8):hover .telegram > path:nth-of-type(1) {
+  fill: white;
+}
+.card:nth-child(8):hover .telegram > path:nth-of-type(2) {
+  fill: #29b6f6;
+}
+.card:nth-child(8):hover .telegram > path:nth-of-type(3) {
+  fill: #29b6f6;
+}
+.card:nth-child(9):hover {
+  background-color: rgb(255,69,0);
+}
+.card:nth-child(9) .reddit > g circle {
+  fill: rgb(255,69,0);
+}
+.card:nth-child(9) .reddit > g path {
+  fill: white;
+}
+.text {
+  position: absolute;
+  font-size: 0.7em;
+  transition: .4s ease-in-out;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 0.33em;
+  z-index: 3;
+}
+// ========================================================================================
+// list when you hover a ball
+// html
+<ul class="wrapper">
+    <li class="icon facebook">
+        <span class="tooltip">Facebook</span>
+        <span><i class="fab fa-facebook-f"></i></span>
+    </li>
+    <li class="icon twitter">
+        <span class="tooltip">Twitter</span>
+        <span><i class="fab fa-twitter"></i></span>
+    </li>
+    <li class="icon instagram">
+        <span class="tooltip">Instagram</span>
+        <span><i class="fab fa-instagram"></i></span>
+    </li>
+</ul>
+// css
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+  height: 120px;
+  width: 100%;
+  padding-top: 40px;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+}
+.wrapper .icon {
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #1877F2;
+  color: #fff;
+}
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: #1DA1F2;
+  color: #fff;
+}
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #E4405F;
+  color: #fff;
+}
+// ========================================================================================
+// animated boxes
+// html
+<div class="loader">
+  <div class="box1"></div>
+  <div class="box2"></div>
+  <div class="box3"></div>
+</div>
+// css
+.loader {
+  width: 112px;
+  height: 112px;
+}
+.box1,
+.box2,
+.box3 {
+  border: 16px solid #f5f5f5;
+  box-sizing: border-box;
+  position: absolute;
+  display: block;
+}
+.box1 {
+  width: 112px;
+  height: 48px;
+  margin-top: 64px;
+  margin-left: 0px;
+  animation: abox1 4s 1s forwards ease-in-out infinite;
+}
+.box2 {
+  width: 48px;
+  height: 48px;
+  margin-top: 0px;
+  margin-left: 0px;
+  animation: abox2 4s 1s forwards ease-in-out infinite;
+}
+.box3 {
+  width: 48px;
+  height: 48px;
+  margin-top: 0px;
+  margin-left: 64px;
+  animation: abox3 4s 1s forwards ease-in-out infinite;
+}
+@keyframes abox1 {
+  0% {
+    width: 112px;
+    height: 48px;
+    margin-top: 64px;
+    margin-left: 0px;
+  }
+  12.5% {
+    width: 48px;
+    height: 48px;
+    margin-top: 64px;
+    margin-left: 0px;
+  }
+  25% {
+    width: 48px;
+    height: 48px;
+    margin-top: 64px;
+    margin-left: 0px;
+  }
+  37.5% {
+    width: 48px;
+    height: 48px;
+    margin-top: 64px;
+    margin-left: 0px;
+  }
+  50% {
+    width: 48px;
+    height: 48px;
+    margin-top: 64px;
+    margin-left: 0px;
+  }
+  62.5% {
+    width: 48px;
+    height: 48px;
+    margin-top: 64px;
+    margin-left: 0px;
+  }
+  75% {
+    width: 48px;
+    height: 112px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  87.5% {
+    width: 48px;
+    height: 48px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  100% {
+    width: 48px;
+    height: 48px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+}
+@keyframes abox2 {
+  0% {
+    width: 48px;
+    height: 48px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  12.5% {
+    width: 48px;
+    height: 48px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  25% {
+    width: 48px;
+    height: 48px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  37.5% {
+    width: 48px;
+    height: 48px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  50% {
+    width: 112px;
+    height: 48px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  62.5% {
+    width: 48px;
+    height: 48px;
+    margin-top: 0px;
+    margin-left: 64px;
+  }
+  75% {
+    width: 48px;
+    height: 48px;
+    margin-top: 0px;
+    margin-left: 64px;
+  }
+  87.5% {
+    width: 48px;
+    height: 48px;
+    margin-top: 0px;
+    margin-left: 64px;
+  }
+  100% {
+    width: 48px;
+    height: 48px;
+    margin-top: 0px;
+    margin-left: 64px;
+  }
+}
+@keyframes abox3 {
+  0% {
+    width: 48px;
+    height: 48px;
+    margin-top: 0px;
+    margin-left: 64px;
+  }
+  12.5% {
+    width: 48px;
+    height: 48px;
+    margin-top: 0px;
+    margin-left: 64px;
+  }
+  25% {
+    width: 48px;
+    height: 112px;
+    margin-top: 0px;
+    margin-left: 64px;
+  }
+  37.5% {
+    width: 48px;
+    height: 48px;
+    margin-top: 64px;
+    margin-left: 64px;
+  }
+  50% {
+    width: 48px;
+    height: 48px;
+    margin-top: 64px;
+    margin-left: 64px;
+  }
+  62.5% {
+    width: 48px;
+    height: 48px;
+    margin-top: 64px;
+    margin-left: 64px;
+  }
+  75% {
+    width: 48px;
+    height: 48px;
+    margin-top: 64px;
+    margin-left: 64px;
+  }
+  87.5% {
+    width: 48px;
+    height: 48px;
+    margin-top: 64px;
+    margin-left: 64px;
+  }
+  100% {
+    width: 112px;
+    height: 48px;
+    margin-top: 64px;
+    margin-left: 0px;
+  }
+}
+// ========================================================================================
+// four animated dots
+// html
+<svg class="pl" width="240" height="240" viewBox="0 0 240 240">
+	<circle class="pl__ring pl__ring--a" cx="120" cy="120" r="105" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 660" stroke-dashoffset="-330" stroke-linecap="round"></circle>
+	<circle class="pl__ring pl__ring--b" cx="120" cy="120" r="35" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 220" stroke-dashoffset="-110" stroke-linecap="round"></circle>
+	<circle class="pl__ring pl__ring--c" cx="85" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+	<circle class="pl__ring pl__ring--d" cx="155" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+</svg>
+// css
+.pl {
+  width: 6em;
+  height: 6em;
+}
+.pl__ring {
+  animation: ringA 2s linear infinite;
+}
+.pl__ring--a {
+  stroke: #f42f25;
+}
+.pl__ring--b {
+  animation-name: ringB;
+  stroke: #f49725;
+}
+.pl__ring--c {
+  animation-name: ringC;
+  stroke: #255ff4;
+}
+.pl__ring--d {
+  animation-name: ringD;
+  stroke: #f42582;
+}
+/* Animations */
+@keyframes ringA {
+  from, 4% {
+    stroke-dasharray: 0 660;
+    stroke-width: 20;
+    stroke-dashoffset: -330;
+  }
+  12% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -335;
+  }
+  32% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -595;
+  }
+  40%, 54% {
+    stroke-dasharray: 0 660;
+    stroke-width: 20;
+    stroke-dashoffset: -660;
+  }
+  62% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -665;
+  }
+  82% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -925;
+  }
+  90%, to {
+    stroke-dasharray: 0 660;
+    stroke-width: 20;
+    stroke-dashoffset: -990;
+  }
+}
+@keyframes ringB {
+  from, 12% {
+    stroke-dasharray: 0 220;
+    stroke-width: 20;
+    stroke-dashoffset: -110;
+  }
+  20% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -115;
+  }
+  40% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -195;
+  }
+  48%, 62% {
+    stroke-dasharray: 0 220;
+    stroke-width: 20;
+    stroke-dashoffset: -220;
+  }
+  70% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -225;
+  }
+  90% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -305;
+  }
+  98%, to {
+    stroke-dasharray: 0 220;
+    stroke-width: 20;
+    stroke-dashoffset: -330;
+  }
+}
+@keyframes ringC {
+  from {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: 0;
+  }
+  8% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -5;
+  }
+  28% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -175;
+  }
+  36%, 58% {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -220;
+  }
+  66% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -225;
+  }
+  86% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -395;
+  }
+  94%, to {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -440;
+  }
+}
+@keyframes ringD {
+  from, 8% {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: 0;
+  }
+  16% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -5;
+  }
+  36% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -175;
+  }
+  44%, 50% {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -220;
+  }
+  58% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -225;
+  }
+  78% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -395;
+  }
+  86%, to {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -440;
+  }
+}
+// ========================================================================================
+// button with serial colors
+// html
+<button>
+  <span class="text">Button</span>
+</button>
+// css
+button {
+ align-items: center;
+ background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+ border: 0;
+ border-radius: 8px;
+ box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+ box-sizing: border-box;
+ color: #FFFFFF;
+ display: flex;
+ font-family: Phantomsans, sans-serif;
+ font-size: 18px;
+ justify-content: center;
+ line-height: 1em;
+ max-width: 100%;
+ min-width: 140px;
+ padding: 3px;
+ text-decoration: none;
+ user-select: none;
+ -webkit-user-select: none;
+ touch-action: manipulation;
+ white-space: nowrap;
+ cursor: pointer;
+ transition: all .3s;
+}
+button:active,
+button:hover {
+ outline: 0;
+}
+button span {
+ background-color: rgb(5, 6, 45);
+ padding: 16px 24px;
+ border-radius: 6px;
+ width: 100%;
+ height: 100%;
+ transition: 300ms;
+}
+button:hover span {
+ background: none;
+}
+button:active {
+ transform: scale(0.9);
+}
+// ========================================================================================
+// input field
+// html
+<div class="form__group field">
+    <input type="input" class="form__field" placeholder="Name" required="">
+    <label for="name" class="form__label">Name</label>
+</div>
+// css
+.form__group {
+  position: relative;
+  padding: 20px 0 0;
+  width: 100%;
+  max-width: 180px;
+}
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 17px;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.form__field::placeholder {
+  color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 17px;
+  cursor: text;
+  top: 20px;
+}
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #9b9b9b;
+  pointer-events: none;
+}
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #116399, #38caef);
+  border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #38caef;
+  font-weight: 700;
+}
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
+// ========================================================================================
+// white list
+// html
+<div class="radio-inputs">
+  <label class="radio">
+    <input type="radio" name="radio" checked="">
+    <span class="name">HTML</span>
+  </label>
+  <label class="radio">
+    <input type="radio" name="radio">
+    <span class="name">React</span>
+  </label>
+      
+  <label class="radio">
+    <input type="radio" name="radio">
+    <span class="name">Vue</span>
+  </label>
+</div>
+// css
+.radio-inputs {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 0.5rem;
+  background-color: #EEE;
+  box-sizing: border-box;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+  padding: 0.25rem;
+  width: 300px;
+  font-size: 14px;
+}
+.radio-inputs .radio {
+  flex: 1 1 auto;
+  text-align: center;
+}
+.radio-inputs .radio input {
+  display: none;
+}
+.radio-inputs .radio .name {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: none;
+  padding: .5rem 0;
+  color: rgba(51, 65, 85, 1);
+  transition: all .15s ease-in-out;
+}
+.radio-inputs .radio input:checked + .name {
+  background-color: #fff;
+  font-weight: 600;
+}
+// ========================================================================================
+// download button
+// html
+<div class="button" data-tooltip="Size: 20Mb">
+<div class="button-wrapper">
+  <div class="text">Download</div>
+    <span class="icon">
+      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"></path></svg>
+    </span>
+  </div>
+</div>
+// css
+.button {
+  --width: 100px;
+  --height: 35px;
+  --tooltip-height: 35px;
+  --tooltip-width: 90px;
+  --gap-between-tooltip-to-button: 18px;
+  --button-color: #1163ff;
+  --tooltip-color: #fff;
+  width: var(--width);
+  height: var(--height);
+  background: var(--button-color);
+  position: relative;
+  text-align: center;
+  border-radius: 0.45em;
+  font-family: "Arial";
+  transition: background 0.3s;
+}
+.button::before {
+  position: absolute;
+  content: attr(data-tooltip);
+  width: var(--tooltip-width);
+  height: var(--tooltip-height);
+  background-color: var(--tooltip-color);
+  font-size: 0.9rem;
+  color: #111;
+  border-radius: .25em;
+  line-height: var(--tooltip-height);
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+  left: calc(50% - var(--tooltip-width) / 2);
+}
+.button::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: var(--tooltip-color);
+  left: calc(50% - 10px);
+  bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+}
+.button::after,.button::before {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-wrapper,.text,.icon {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  color: #fff;
+}
+.text {
+  top: 0
+}
+.text,.icon {
+  transition: top 0.5s;
+}
+.icon {
+  color: #fff;
+  top: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon svg {
+  width: 24px;
+  height: 24px;
+}
+.button:hover {
+  background: #6c18ff;
+}
+.button:hover .text {
+  top: -100%;
+}
+.button:hover .icon {
+  top: 0;
+}
+.button:hover:before,.button:hover:after {
+  opacity: 1;
+  visibility: visible;
+}
+.button:hover:after {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+}
+.button:hover:before {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+}
+// ========================================================================================
+// animated coloured text
+// html
+<button data-text="Awesome" class="button">
+    <span class="actual-text">&nbsp;uiverse&nbsp;</span>
+    <span class="hover-text" aria-hidden="true">&nbsp;uiverse&nbsp;</span>
+</button>
+// css
+/* === removing default button style ===*/
+.button {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+/* button styling */
+.button {
+  --border-right: 6px;
+  --text-stroke-color: rgba(255,255,255,0.6);
+  --animation-color: #37FF8B;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+/* this is the text, when you hover on button */
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+/* hover */
+.button:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color))
+}
+// ========================================================================================
+// button
+// html
+<button class="button2">
+    Hover me
+</button>
+// css
+.button2 {
+  display: inline-block;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  color: #090909;
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  box-shadow: 6px 6px 12px #c5c5c5,
+             -6px -6px 12px #ffffff;
+}
+.button2:active {
+  color: #666;
+  box-shadow: inset 4px 4px 12px #c5c5c5,
+             inset -4px -4px 12px #ffffff;
+}
+.button2:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+.button2:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #009087;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+.button2:hover {
+  color: #ffffff;
+  border: 1px solid #009087;
+}
+.button2:hover:before {
+  top: -35%;
+  background-color: #009087;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+.button2:hover:after {
+  top: -45%;
+  background-color: #009087;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+// ========================================================================================
+// text
+// html
+<button>
+  HOVER ME
+</button>
+// css
+button {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  border: none;
+  background: none;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+}
+button::before {
+  margin-left: auto;
+}
+button::after, button::before {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #f44336;
+  display: block;
+  transition: 0.5s;
+}
+button:hover::after, button:hover::before {
+  width: 100%;
+}
+// ========================================================================================
+// loading effect
+// html
+<section class="dots-container">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</section>
+// css
+.dots-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.dot {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: #b3d4fc;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+.dot:last-child {
+  margin-right: 0;
+}
+.dot:nth-child(1) {
+  animation-delay: -0.3s;
+}
+.dot:nth-child(2) {
+  animation-delay: -0.1s;
+}
+.dot:nth-child(3) {
+  animation-delay: 0.1s;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    background-color: #b3d4fc;
+    box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
+  }
+  50% {
+    transform: scale(1.2);
+    background-color: #6793fb;
+    box-shadow: 0 0 0 10px rgba(178, 212, 252, 0);
+  }
+  100% {
+    transform: scale(0.8);
+    background-color: #b3d4fc;
+    box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
+  }
+}
+// ========================================================================================
+// loading effect
+// html
+<div class="dot-spinner">
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+</div>
+// css
+.dot-spinner {
+  --uib-size: 2.8rem;
+  --uib-speed: .9s;
+  --uib-color: #183153;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: var(--uib-size);
+  width: var(--uib-size);
+}
+.dot-spinner__dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+}
+.dot-spinner__dot::before {
+  content: '';
+  height: 20%;
+  width: 20%;
+  border-radius: 50%;
+  background-color: var(--uib-color);
+  transform: scale(0);
+  opacity: 0.5;
+  animation: pulse0112 calc(var(--uib-speed) * 1.111) ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(18, 31, 53, 0.3);
+}
+.dot-spinner__dot:nth-child(2) {
+  transform: rotate(45deg);
+}
+.dot-spinner__dot:nth-child(2)::before {
+  animation-delay: calc(var(--uib-speed) * -0.875);
+}
+.dot-spinner__dot:nth-child(3) {
+  transform: rotate(90deg);
+}
+.dot-spinner__dot:nth-child(3)::before {
+  animation-delay: calc(var(--uib-speed) * -0.75);
+}
+.dot-spinner__dot:nth-child(4) {
+  transform: rotate(135deg);
+}
+.dot-spinner__dot:nth-child(4)::before {
+  animation-delay: calc(var(--uib-speed) * -0.625);
+}
+.dot-spinner__dot:nth-child(5) {
+  transform: rotate(180deg);
+}
+.dot-spinner__dot:nth-child(5)::before {
+  animation-delay: calc(var(--uib-speed) * -0.5);
+}
+.dot-spinner__dot:nth-child(6) {
+  transform: rotate(225deg);
+}
+.dot-spinner__dot:nth-child(6)::before {
+  animation-delay: calc(var(--uib-speed) * -0.375);
+}
+.dot-spinner__dot:nth-child(7) {
+  transform: rotate(270deg);
+}
+.dot-spinner__dot:nth-child(7)::before {
+  animation-delay: calc(var(--uib-speed) * -0.25);
+}
+.dot-spinner__dot:nth-child(8) {
+  transform: rotate(315deg);
+}
+.dot-spinner__dot:nth-child(8)::before {
+  animation-delay: calc(var(--uib-speed) * -0.125);
+}
+@keyframes pulse0112 {
+  0%,
+  100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+// ========================================================================================
+// input field
+// html
+<div class="input-group">
+  <input required="" type="text" name="text" autocomplete="off" class="input">
+  <label class="user-label">First Name</label>
+</div>
+// css
+.input-group {
+ position: relative;
+}
+.input {
+ border: solid 1.5px #9e9e9e;
+ border-radius: 1rem;
+ background: none;
+ padding: 1rem;
+ font-size: 1rem;
+ color: #f5f5f5;
+ transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+}
+.user-label {
+ position: absolute;
+ left: 15px;
+ color: #e8e8e8;
+ pointer-events: none;
+ transform: translateY(1rem);
+ transition: 150ms cubic-bezier(0.4,0,0.2,1);
+}
+.input:focus, input:valid {
+ outline: none;
+ border: 1.5px solid #1a73e8;
+}
+.input:focus ~ label, input:valid ~ label {
+ transform: translateY(-50%) scale(0.8);
+ background-color: #212121;
+ padding: 0 .2em;
+ color: #2196f3;
+}
+// ========================================================================================
+// rating field
+// html
+<div class="rating">
+  <input value="star-1" name="star-radio" id="star-1" type="radio">
+  <label for="star-1">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" pathLength="360"></path></svg>
+  </label>
+  <input value="star-1" name="star-radio" id="star-2" type="radio">
+  <label for="star-2">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" pathLength="360"></path></svg>
+  </label>
+  <input value="star-1" name="star-radio" id="star-3" type="radio">
+  <label for="star-3">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" pathLength="360"></path></svg>
+  </label>
+  <input value="star-1" name="star-radio" id="star-4" type="radio">
+  <label for="star-4">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" pathLength="360"></path></svg>
+  </label>
+  <input value="star-1" name="star-radio" id="star-5" type="radio">
+  <label for="star-5">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" pathLength="360"></path></svg>
+  </label>
+</div>
+// css
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 0.3rem;
+  --stroke: #666;
+  --fill: #ffc73a;
+}
+.rating input {
+  appearance: unset;
+}
+.rating label {
+  cursor: pointer;
+}
+.rating svg {
+  width: 3rem;
+  height: 3rem;
+  overflow: visible;
+  fill: transparent;
+  stroke: var(--stroke);
+  stroke-linejoin: bevel;
+  stroke-dasharray: 12;
+  animation: idle 4s linear infinite;
+  transition: stroke 0.2s, fill 0.5s;
+}
+@keyframes idle {
+  from {
+    stroke-dashoffset: 24;
+  }
+}
+.rating label:hover svg {
+  stroke: var(--fill);
+}
+.rating input:checked ~ label svg {
+  transition: 0s;
+  animation: idle 4s linear infinite, yippee 0.75s backwards;
+  fill: var(--fill);
+  stroke: var(--fill);
+  stroke-opacity: 0;
+  stroke-dasharray: 0;
+  stroke-linejoin: miter;
+  stroke-width: 8px;
+}
+@keyframes yippee {
+  0% {
+    transform: scale(1);
+    fill: var(--fill);
+    fill-opacity: 0;
+    stroke-opacity: 1;
+    stroke: var(--stroke);
+    stroke-dasharray: 10;
+    stroke-width: 1px;
+    stroke-linejoin: bevel;
+  }
+  30% {
+    transform: scale(0);
+    fill: var(--fill);
+    fill-opacity: 0;
+    stroke-opacity: 1;
+    stroke: var(--stroke);
+    stroke-dasharray: 10;
+    stroke-width: 1px;
+    stroke-linejoin: bevel;
+  }
+  30.1% {
+    stroke: var(--fill);
+    stroke-dasharray: 0;
+    stroke-linejoin: miter;
+    stroke-width: 8px;
+  }
+  60% {
+    transform: scale(1.2);
+    fill: var(--fill);
+  }
+}
+// ========================================================================================
+// search input
+// html
+  <form class="form">
+      <button>
+          <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search">
+              <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9" stroke="currentColor" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+      </button>
+      <input class="input" placeholder="Type your text" required="" type="text">
+      <button class="reset" type="reset">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+      </button>
+  </form>
+// css
+/* From uiverse.io by @satyamchaudharydev */
+/* removing default style of button */
+.form button {
+  border: none;
+  background: none;
+  color: #8b8ba7;
+}
+/* styling of whole input container */
+.form {
+  --timing: 0.3s;
+  --width-of-input: 200px;
+  --height-of-input: 40px;
+  --border-height: 2px;
+  --input-bg: #fff;
+  --border-color: #2f2ee9;
+  --border-radius: 30px;
+  --after-border-radius: 1px;
+  position: relative;
+  width: var(--width-of-input);
+  height: var(--height-of-input);
+  display: flex;
+  align-items: center;
+  padding-inline: 0.8em;
+  border-radius: var(--border-radius);
+  transition: border-radius 0.5s ease;
+  background: var(--input-bg,#fff);
+}
+/* styling of Input */
+.input {
+  font-size: 0.9rem;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  padding-inline: 0.5em;
+  padding-block: 0.7em;
+  border: none;
+}
+/* styling of animated border */
+.form:before {
+  content: "";
+  position: absolute;
+  background: var(--border-color);
+  transform: scaleX(0);
+  transform-origin: center;
+  width: 100%;
+  height: var(--border-height);
+  left: 0;
+  bottom: 0;
+  border-radius: 1px;
+  transition: transform var(--timing) ease;
+}
+/* Hover on Input */
+.form:focus-within {
+  border-radius: var(--after-border-radius);
+}
+input:focus {
+  outline: none;
+}
+/* here is code of animated border */
+.form:focus-within:before {
+  transform: scale(1);
+}
+/* styling of close button */
+/* == you can click the close button to remove text == */
+.reset {
+  border: none;
+  background: none;
+  opacity: 0;
+  visibility: hidden;
+}
+/* close button shown when typing */
+input:not(:placeholder-shown) ~ .reset {
+  opacity: 1;
+  visibility: visible;
+}
+/* sizing svg icons */
+.form svg {
+  width: 17px;
+  margin-top: 3px;
+}
+// ========================================================================================
+// input field
+// html
+<input placeholder="Enter your text..." class="input" name="text" type="text">
+// css
+.input {
+  background-color: #212121;
+  max-width: 190px;
+  height: 40px;
+  padding: 10px;
+  /* text-align: center; */
+  border: 2px solid white;
+  border-radius: 5px;
+  /* box-shadow: 3px 3px 2px rgb(249, 255, 85); */
+}
+.input:focus {
+  color: rgb(0, 255, 255);
+  background-color: #212121;
+  outline-color: rgb(0, 255, 255);
+  box-shadow: -3px -3px 15px rgb(0, 255, 255);
+  transition: .1s;
+  transition-property: box-shadow;
+}
+// ========================================================================================
+// list of elements
+// html
+<div class="main">
+  <div class="up">
+    <button class="card1">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="30px" height="30px" fill-rule="nonzero" class="instagram"><g fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8,8)"><path d="M11.46875,5c-3.55078,0 -6.46875,2.91406 -6.46875,6.46875v9.0625c0,3.55078 2.91406,6.46875 6.46875,6.46875h9.0625c3.55078,0 6.46875,-2.91406 6.46875,-6.46875v-9.0625c0,-3.55078 -2.91406,-6.46875 -6.46875,-6.46875zM11.46875,7h9.0625c2.47266,0 4.46875,1.99609 4.46875,4.46875v9.0625c0,2.47266 -1.99609,4.46875 -4.46875,4.46875h-9.0625c-2.47266,0 -4.46875,-1.99609 -4.46875,-4.46875v-9.0625c0,-2.47266 1.99609,-4.46875 4.46875,-4.46875zM21.90625,9.1875c-0.50391,0 -0.90625,0.40234 -0.90625,0.90625c0,0.50391 0.40234,0.90625 0.90625,0.90625c0.50391,0 0.90625,-0.40234 0.90625,-0.90625c0,-0.50391 -0.40234,-0.90625 -0.90625,-0.90625zM16,10c-3.30078,0 -6,2.69922 -6,6c0,3.30078 2.69922,6 6,6c3.30078,0 6,-2.69922 6,-6c0,-3.30078 -2.69922,-6 -6,-6zM16,12c2.22266,0 4,1.77734 4,4c0,2.22266 -1.77734,4 -4,4c-2.22266,0 -4,-1.77734 -4,-4c0,-2.22266 1.77734,-4 4,-4z"></path></g></g></svg>
+    </button>
+    <button class="card2">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="30px" height="30px" class="twitter"><path d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429"></path></svg>
+    </button>
+  </div>
+  <div class="down">
+    <button class="card3">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30px" height="30px" class="github">    <path d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"></path></svg>
+    </button>
+    <button class="card4">
+      <svg height="30px" width="30px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="discord"><path d="M40,12c0,0-4.585-3.588-10-4l-0.488,0.976C34.408,10.174,36.654,11.891,39,14c-4.045-2.065-8.039-4-15-4s-10.955,1.935-15,4c2.346-2.109,5.018-4.015,9.488-5.024L18,8c-5.681,0.537-10,4-10,4s-5.121,7.425-6,22c5.162,5.953,13,6,13,6l1.639-2.185C13.857,36.848,10.715,35.121,8,32c3.238,2.45,8.125,5,16,5s12.762-2.55,16-5c-2.715,3.121-5.857,4.848-8.639,5.815L33,40c0,0,7.838-0.047,13-6C45.121,19.425,40,12,40,12z M17.5,30c-1.933,0-3.5-1.791-3.5-4c0-2.209,1.567-4,3.5-4s3.5,1.791,3.5,4C21,28.209,19.433,30,17.5,30z M30.5,30c-1.933,0-3.5-1.791-3.5-4c0-2.209,1.567-4,3.5-4s3.5,1.791,3.5,4C34,28.209,32.433,30,30.5,30z"></path></svg>
+    </button>
+  </div>
+</div>
+// css
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.up {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+.down {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+.card1 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 90px 5px 5px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+}
+.instagram {
+  margin-top: 1.5em;
+  margin-left: 1.2em;
+  fill: #cc39a4;
+}
+.card2 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 90px 5px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+}
+.twitter {
+  margin-top: 1.5em;
+  margin-left: -.9em;
+  fill: #03A9F4;
+}
+.card3 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 5px 5px 90px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+}
+.github {
+  margin-top: -.6em;
+  margin-left: 1.2em;
+}
+.card4 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 5px 90px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+}
+.discord {
+  margin-top: -.9em;
+  margin-left: -1.2em;
+  fill: #8c9eff;
+}
+.card1:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #cc39a4;
+}
+.card1:hover .instagram {
+  fill: white;
+}
+.card2:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #03A9F4;
+}
+.card2:hover .twitter {
+  fill: white;
+}
+.card3:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: black;
+}
+.card3:hover .github {
+  fill: white;
+}
+.card4:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #8c9eff;
+}
+.card4:hover .discord {
+  fill: white;
+}
+// ========================================================================================
+// list of elements
+// html
+<div class="social-links">
+		<div id="twitter" class="social-btn flex-center">
+			<svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg><span>@example</span>
+		</div>
+	
+		<div id="linkedin" class="social-btn flex-center">
+			<svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"></path></svg><span>in/example</span>
+		</div>
+
+		<div id="github" class="social-btn flex-center">
+			<svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg><span>example</span>
+	</div>
+</div>
+// css
+.social-links,.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social-btn {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  font-family: 'Titillium Web', sans-serif;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  background: white;
+  margin: 5px;
+  transition: 0.3s;
+  justify-content: center;
+}
+.social-btn svg {
+  height: 24px;
+  width: 24px;
+}
+.social-btn span {
+  width: 0px;
+  overflow: hidden;
+  transition: 0.3s;
+  text-align: center;
+  margin-left: 5px;
+}
+.social-btn:hover {
+  width: 150px;
+  border-radius: 5px;
+}
+.social-btn:hover span {
+  padding: 2px;
+  width: 80px;
+}
+#twitter svg {
+  fill: #1da1f2;
+}
+#linkedin svg {
+  fill: #0e76a8;
+}
+#github {
+  fill: #333;
+}
+// ========================================================================================
+// good animation
+// html
+<div class="loader">
+  <div class="cubes">
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+    <div class="cube">
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    	<div class="side"></div>
+    </div>
+  </div>
+</div>
+// css
+/* The loader container */
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160px;
+  height: 160px;
+  margin-top: -80px;
+  margin-left: -80px;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+.cubes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(60deg) rotateZ(-135deg);
+  animation: cubes 8s cubic-bezier(0,0,1,1) infinite;
+}
+/* The cube */
+.cube {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  animation: cube 2s cubic-bezier(.64,.21,.42,.85) infinite;
+}
+@keyframes cube {
+  0% {
+    opacity: 0;
+    transform: translateZ(100px);
+  }
+  40%, 60% {
+    opacity: 1;
+    transform: translateZ(10px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateZ(-100px);
+  }
+}
+/* The side */
+.side {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+/* back */
+.side:nth-child(1) {
+  transform: rotateX(-180deg) translateZ(10px);
+  background-color: #1e3f57;
+}
+/* left side */
+.side:nth-child(2) {
+  transform: rotateY(-90deg) translateZ(10px);
+  background-color: #6bb2cd;
+}
+/* right side */
+.side:nth-child(3) {
+  transform: rotateY(90deg) translateZ(10px);
+  background-color: #6bb2cd;
+}
+/* top side */
+.side:nth-child(4) {
+  transform: rotateX(90deg) translateZ(10px);
+  background-color: #3c617d;
+}
+/* bottom side */
+.side:nth-child(5) {
+  transform: rotateX(-90deg) translateZ(10px);
+  background-color: #3c617d;
+}
+/* top */
+.side:nth-child(6) {
+  transform: translateZ(10px);
+  background-color: #1e3f57;
+}
+.cube:nth-child(8n+1) {
+  left: 20px;
+}
+.cube:nth-child(8n+2) {
+  left: 40px;
+}
+.cube:nth-child(8n+3) {
+  left: 60px;
+}
+.cube:nth-child(8n+4) {
+  left: 80px;
+}
+.cube:nth-child(8n+5) {
+  left: 100px;
+}
+.cube:nth-child(8n+6) {
+  left: 120px;
+}
+.cube:nth-child(8n+7) {
+  left: 140px;
+}
+.cube:nth-child(8),
+.cube:nth-child(9),
+.cube:nth-child(10),
+.cube:nth-child(11),
+.cube:nth-child(12),
+.cube:nth-child(13),
+.cube:nth-child(14),
+.cube:nth-child(15) {
+  top: 20px;
+}
+.cube:nth-child(16),
+.cube:nth-child(17),
+.cube:nth-child(18),
+.cube:nth-child(19),
+.cube:nth-child(20),
+.cube:nth-child(21),
+.cube:nth-child(22),
+.cube:nth-child(23) {
+  top: 40px;
+}
+.cube:nth-child(24),
+.cube:nth-child(25),
+.cube:nth-child(26),
+.cube:nth-child(27),
+.cube:nth-child(28),
+.cube:nth-child(29),
+.cube:nth-child(30),
+.cube:nth-child(31) {
+  top: 60px;
+}
+.cube:nth-child(32),
+.cube:nth-child(33),
+.cube:nth-child(34),
+.cube:nth-child(35),
+.cube:nth-child(36),
+.cube:nth-child(37),
+.cube:nth-child(38),
+.cube:nth-child(39) {
+  top: 80px;
+}
+.cube:nth-child(40),
+.cube:nth-child(41),
+.cube:nth-child(42),
+.cube:nth-child(43),
+.cube:nth-child(44),
+.cube:nth-child(45),
+.cube:nth-child(46),
+.cube:nth-child(47) {
+  top: 100px;
+}
+.cube:nth-child(48),
+.cube:nth-child(49),
+.cube:nth-child(50),
+.cube:nth-child(51),
+.cube:nth-child(52),
+.cube:nth-child(53),
+.cube:nth-child(54),
+.cube:nth-child(55) {
+  top: 120px;
+}
+.cube:nth-child(56),
+.cube:nth-child(57),
+.cube:nth-child(58),
+.cube:nth-child(59),
+.cube:nth-child(60),
+.cube:nth-child(61),
+.cube:nth-child(62),
+.cube:nth-child(63) {
+  top: 140px;
+}
+/* keyframe delays */
+.cube:nth-child(1),
+.cube:nth-child(8) {
+  animation-delay: 50ms;
+}
+.cube:nth-child(2),
+.cube:nth-child(9),
+.cube:nth-child(16) {
+  animation-delay: 100ms;
+}
+.cube:nth-child(3),
+.cube:nth-child(10),
+.cube:nth-child(17),
+.cube:nth-child(24) {
+  animation-delay: 150ms;
+}
+.cube:nth-child(4),
+.cube:nth-child(11),
+.cube:nth-child(18),
+.cube:nth-child(25),
+.cube:nth-child(32) {
+  animation-delay: 200ms;
+}
+.cube:nth-child(5),
+.cube:nth-child(12),
+.cube:nth-child(19),
+.cube:nth-child(26),
+.cube:nth-child(33),
+.cube:nth-child(40) {
+  animation-delay: 250ms;
+}
+.cube:nth-child(6),
+.cube:nth-child(13),
+.cube:nth-child(20),
+.cube:nth-child(27),
+.cube:nth-child(34),
+.cube:nth-child(41),
+.cube:nth-child(48) {
+  animation-delay: 300ms;
+}
+.cube:nth-child(7),
+.cube:nth-child(14),
+.cube:nth-child(21),
+.cube:nth-child(28),
+.cube:nth-child(35),
+.cube:nth-child(42),
+.cube:nth-child(49),
+.cube:nth-child(56) {
+  animation-delay: 350ms;
+}
+.cube:nth-child(15),
+.cube:nth-child(22),
+.cube:nth-child(29),
+.cube:nth-child(36),
+.cube:nth-child(43),
+.cube:nth-child(50),
+.cube:nth-child(57) {
+  animation-delay: 400ms;
+}
+.cube:nth-child(23),
+.cube:nth-child(30),
+.cube:nth-child(37),
+.cube:nth-child(44),
+.cube:nth-child(51),
+.cube:nth-child(58) {
+  animation-delay: 450ms;
+}
+.cube:nth-child(31),
+.cube:nth-child(38),
+.cube:nth-child(45),
+.cube:nth-child(52),
+.cube:nth-child(59) {
+  animation-delay: 500ms;
+}
+.cube:nth-child(39),
+.cube:nth-child(46),
+.cube:nth-child(53),
+.cube:nth-child(60) {
+  animation-delay: 550ms;
+}
+.cube:nth-child(47),
+.cube:nth-child(54),
+.cube:nth-child(61) {
+  animation-delay: 600ms;
+}
+.cube:nth-child(55),
+.cube:nth-child(62) {
+  animation-delay: 650ms;
+}
+.cube:nth-child(63) {
+  animation-delay: 700ms;
+}
+// ========================================================================================
+// animation
+// html
+<svg class="pl" width="128px" height="128px" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <circle class="pl__ring1" cx="64" cy="64" r="60" fill="none" stroke="hsl(3,90%,55%)" stroke-width="8" transform="rotate(-90,64,64)" stroke-linecap="round" stroke-dasharray="377 377" stroke-dashoffset="-376.4"></circle>
+  <circle class="pl__ring2" cx="64" cy="64" r="52.5" fill="none" stroke="hsl(13,90%,55%)" stroke-width="7" transform="rotate(-90,64,64)" stroke-linecap="round" stroke-dasharray="329.9 329.9" stroke-dashoffset="-329.3"></circle>
+  <circle class="pl__ring3" cx="64" cy="64" r="46" fill="none" stroke="hsl(23,90%,55%)" stroke-width="6" transform="rotate(-90,64,64)" stroke-linecap="round" stroke-dasharray="289 289" stroke-dashoffset="-288.6"></circle>
+  <circle class="pl__ring4" cx="64" cy="64" r="40.5" fill="none" stroke="hsl(33,90%,55%)" stroke-width="5" transform="rotate(-90,64,64)" stroke-linecap="round" stroke-dasharray="254.5 254.5" stroke-dashoffset="-254"></circle>
+  <circle class="pl__ring5" cx="64" cy="64" r="36" fill="none" stroke="hsl(43,90%,55%)" stroke-width="4" transform="rotate(-90,64,64)" stroke-linecap="round" stroke-dasharray="226.2 226.2" stroke-dashoffset="-225.8"></circle>
+  <circle class="pl__ring6" cx="64" cy="64" r="32.5" fill="none" stroke="hsl(53,90%,55%)" stroke-width="3" transform="rotate(-90,64,64)" stroke-linecap="round" stroke-dasharray="204.2 204.2" stroke-dashoffset="-203.9"></circle>
+</svg>
+// css
+/* From cssbuttons.io by @harmankanda.github.io/New */
+.pl {
+ width: 5em;
+ height: 5em;
+}
+.pl circle {
+ transform-box: fill-box;
+ transform-origin: 50% 50%;
+}
+.pl__ring1 {
+ animation: ring1 4s 0s ease-in-out infinite;
+}
+.pl__ring2 {
+ animation: ring2 4s 0.04s ease-in-out infinite;
+}
+.pl__ring3 {
+ animation: ring3 4s 0.08s ease-in-out infinite;
+}
+.pl__ring4 {
+ animation: ring4 4s 0.12s ease-in-out infinite;
+}
+.pl__ring5 {
+ animation: ring5 4s 0.16s ease-in-out infinite;
+}
+.pl__ring6 {
+ animation: ring6 4s 0.2s ease-in-out infinite;
+}
+/* Animations */
+@keyframes ring1 {
+ from {
+  stroke-dashoffset: -376.237129776;
+  transform: rotate(-0.25turn);
+  animation-timing-function: ease-in;
+ }
+ 23% {
+  stroke-dashoffset: -94.247778;
+  transform: rotate(1turn);
+  animation-timing-function: ease-out;
+ }
+ 46%, 50% {
+  stroke-dashoffset: -376.237129776;
+  transform: rotate(2.25turn);
+  animation-timing-function: ease-in;
+ }
+ 73% {
+  stroke-dashoffset: -94.247778;
+  transform: rotate(3.5turn);
+  animation-timing-function: ease-out;
+ }
+ 96%, to {
+  stroke-dashoffset: -376.237129776;
+  transform: rotate(4.75turn);
+ }
+}
+@keyframes ring2 {
+ from {
+  stroke-dashoffset: -329.207488554;
+  transform: rotate(-0.25turn);
+  animation-timing-function: ease-in;
+ }
+ 23% {
+  stroke-dashoffset: -82.46680575;
+  transform: rotate(1turn);
+  animation-timing-function: ease-out;
+ }
+ 46%, 50% {
+  stroke-dashoffset: -329.207488554;
+  transform: rotate(2.25turn);
+  animation-timing-function: ease-in;
+ }
+ 73% {
+  stroke-dashoffset: -82.46680575;
+  transform: rotate(3.5turn);
+  animation-timing-function: ease-out;
+ }
+ 96%, to {
+  stroke-dashoffset: -329.207488554;
+  transform: rotate(4.75turn);
+ }
+}
+@keyframes ring3 {
+ from {
+  stroke-dashoffset: -288.4484661616;
+  transform: rotate(-0.25turn);
+  animation-timing-function: ease-in;
+ }
+ 23% {
+  stroke-dashoffset: -72.2566298;
+  transform: rotate(1turn);
+  animation-timing-function: ease-out;
+ }
+ 46%, 50% {
+  stroke-dashoffset: -288.4484661616;
+  transform: rotate(2.25turn);
+  animation-timing-function: ease-in;
+ }
+ 73% {
+  stroke-dashoffset: -72.2566298;
+  transform: rotate(3.5turn);
+  animation-timing-function: ease-out;
+ }
+ 96%, to {
+  stroke-dashoffset: -288.4484661616;
+  transform: rotate(4.75turn);
+ }
+}
+@keyframes ring4 {
+ from {
+  stroke-dashoffset: -253.9600625988;
+  transform: rotate(-0.25turn);
+  animation-timing-function: ease-in;
+ }
+ 23% {
+  stroke-dashoffset: -63.61725015;
+  transform: rotate(1turn);
+  animation-timing-function: ease-out;
+ }
+ 46%, 50% {
+  stroke-dashoffset: -253.9600625988;
+  transform: rotate(2.25turn);
+  animation-timing-function: ease-in;
+ }
+ 73% {
+  stroke-dashoffset: -63.61725015;
+  transform: rotate(3.5turn);
+  animation-timing-function: ease-out;
+ }
+ 96%, to {
+  stroke-dashoffset: -253.9600625988;
+  transform: rotate(4.75turn);
+ }
+}
+@keyframes ring5 {
+ from {
+  stroke-dashoffset: -225.7422778656;
+  transform: rotate(-0.25turn);
+  animation-timing-function: ease-in;
+ }
+ 23% {
+  stroke-dashoffset: -56.5486668;
+  transform: rotate(1turn);
+  animation-timing-function: ease-out;
+ }
+ 46%, 50% {
+  stroke-dashoffset: -225.7422778656;
+  transform: rotate(2.25turn);
+  animation-timing-function: ease-in;
+ }
+ 73% {
+  stroke-dashoffset: -56.5486668;
+  transform: rotate(3.5turn);
+  animation-timing-function: ease-out;
+ }
+ 96%, to {
+  stroke-dashoffset: -225.7422778656;
+  transform: rotate(4.75turn);
+ }
+}
+@keyframes ring6 {
+ from {
+  stroke-dashoffset: -203.795111962;
+  transform: rotate(-0.25turn);
+  animation-timing-function: ease-in;
+ }
+ 23% {
+  stroke-dashoffset: -51.05087975;
+  transform: rotate(1turn);
+  animation-timing-function: ease-out;
+ }
+ 46%, 50% {
+  stroke-dashoffset: -203.795111962;
+  transform: rotate(2.25turn);
+  animation-timing-function: ease-in;
+ }
+ 73% {
+  stroke-dashoffset: -51.05087975;
+  transform: rotate(3.5turn);
+  animation-timing-function: ease-out;
+ }
+ 96%, to {
+  stroke-dashoffset: -203.795111962;
+  transform: rotate(4.75turn);
+ }
+}
+// ========================================================================================
+// animation
+// html
+<div class="spinner"></div>
+// css
+/* Normal Usage */
+.spinner:before {
+  transform: rotateX(60deg) rotateY(45deg) rotateZ(45deg);
+  animation: 750ms rotateBefore infinite linear reverse;
+}
+.spinner:after {
+  transform: rotateX(240deg) rotateY(45deg) rotateZ(45deg);
+  animation: 750ms rotateAfter infinite linear;
+}
+.spinner:before,
+.spinner:after {
+  box-sizing: border-box;
+  content: '';
+  display: block;
+  position: absolute;
+  margin-top: -5em;
+  margin-left: -5em;
+  width: 10em;
+  height: 10em;
+  transform-style: preserve-3d;
+  transform-origin: 50%;
+  transform: rotateY(50%);
+  perspective-origin: 50% 50%;
+  perspective: 340px;
+  background-size: 10em 10em;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjI2NnB4IiBoZWlnaHQ9IjI5N3B4IiB2aWV3Qm94PSIwIDAgMjY2IDI5NyIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWxuczpza2V0Y2g9Imh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaC9ucyI+CiAgICA8dGl0bGU+c3Bpbm5lcjwvdGl0bGU+CiAgICA8ZGVzY3JpcHRpb24+Q3JlYXRlZCB3aXRoIFNrZXRjaCAoaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoKTwvZGVzY3JpcHRpb24+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBza2V0Y2g6dHlwZT0iTVNQYWdlIj4KICAgICAgICA8cGF0aCBkPSJNMTcxLjUwNzgxMywzLjI1MDAwMDM4IEMyMjYuMjA4MTgzLDEyLjg1NzcxMTEgMjk3LjExMjcyMiw3MS40OTEyODIzIDI1MC44OTU1OTksMTA4LjQxMDE1NSBDMjE2LjU4MjAyNCwxMzUuODIwMzEgMTg2LjUyODQwNSw5Ny4wNjI0OTY0IDE1Ni44MDA3NzQsODUuNzczNDM0NiBDMTI3LjA3MzE0Myw3NC40ODQzNzIxIDc2Ljg4ODQ2MzIsODQuMjE2MTQ2MiA2MC4xMjg5MDY1LDEwOC40MTAxNTMgQy0xNS45ODA0Njg1LDIxOC4yODEyNDcgMTQ1LjI3NzM0NCwyOTYuNjY3OTY4IDE0NS4yNzczNDQsMjk2LjY2Nzk2OCBDMTQ1LjI3NzM0NCwyOTYuNjY3OTY4IC0yNS40NDkyMTg3LDI1Ny4yNDIxOTggMy4zOTg0Mzc1LDEwOC40MTAxNTUgQzE2LjMwNzA2NjEsNDEuODExNDE3NCA4NC43Mjc1ODI5LC0xMS45OTIyOTg1IDE3MS41MDc4MTMsMy4yNTAwMDAzOCBaIiBpZD0iUGF0aC0xIiBmaWxsPSIjMDAwMDAwIiBza2V0Y2g6dHlwZT0iTVNTaGFwZUdyb3VwIj48L3BhdGg+CiAgICA8L2c+Cjwvc3ZnPg==);
+}
+/* sitNSpin.less */
+@keyframes rotateBefore {
+  from {
+    transform: rotateX(60deg) rotateY(45deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(60deg) rotateY(45deg) rotateZ(-360deg);
+  }
+}
+@keyframes rotateAfter {
+  from {
+    transform: rotateX(240deg) rotateY(45deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(240deg) rotateY(45deg) rotateZ(360deg);
+  }
+}
+// ========================================================================================
+// animaiton
+// html
+<div class="container">
+      <div class="item" style="--i:0;"></div>
+      <div class="item" style="--i:1;"></div>
+      <div class="item" style="--i:2;"></div>
+      <div class="item" style="--i:3;"></div>
+      <div class="item" style="--i:4;"></div>
+      <div class="item" style="--i:5;"></div>
+      <div class="item" style="--i:6;"></div>
+      <div class="item" style="--i:7;"></div>
+      <div class="item" style="--i:8;"></div>
+      <div class="item" style="--i:9;"></div>
+      <div class="item" style="--i:10;"></div>
+      <div class="item" style="--i:11;"></div>
+      <div class="item" style="--i:12;"></div>
+      <div class="item" style="--i:13;"></div>
+      <div class="item" style="--i:14;"></div>
+      <div class="item" style="--i:15;"></div>
+      <div class="item" style="--i:16;"></div>
+      <div class="item" style="--i:17;"></div>
+      <div class="item" style="--i:18;"></div>
+      <div class="item" style="--i:19;"></div>
+      <div class="item" style="--i:20;"></div>
+    </div>
+// css
+.container {
+  position: absolute;
+  top: 40%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item {
+  position: absolute;
+  background-color: transparent;
+  width: calc(var(--i) * 2.5vmin);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: .9vmin solid rgb(0, 200, 255);
+  transform-style: preserve-3d;
+  transform: rotateX(70deg) translateZ(50px);
+  animation: my-move 3s ease-in-out calc(var(--i) * 0.08s) infinite;
+  box-shadow: 0px 0px 15px rgb(124, 124, 124),
+    inset 0px 0px 15px rgb(124, 124, 124);
+}
+@keyframes my-move {
+  0%,
+  100% {
+    transform: rotateX(70deg) translateZ(50px) translateY(0px);
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    transform: rotateX(70deg) translateZ(50px) translateY(-50vmin);
+    filter: hue-rotate(180deg);
+  }
+}
+// ========================================================================================
+// watered word
+// html
+<div class="loader">
+    <span>uiverse</span>
+    <span>uiverse</span>
+</div>
+// css
+.loader {
+  position: relative;
+}
+.loader span {
+  position: absolute;
+  color: #fff;
+  transform: translate(-50%, -50%);
+  font-size: 38px;
+  letter-spacing: 5px;
+}
+.loader span:nth-child(1) {
+  color: transparent;
+  -webkit-text-stroke: 0.3px rgb(128, 198, 255);
+}
+.loader span:nth-child(2) {
+  color: rgb(128, 198, 255);
+  -webkit-text-stroke: 1px rgb(128, 198, 255);
+  animation: uiverse723 3s ease-in-out infinite;
+}
+@keyframes uiverse723 {
+  0%, 100% {
+    clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 
+     54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+  }
+  50% {
+    clip-path: polygon(0% 60%, 16% 65%, 34% 66%, 
+     51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+  }
+}
+// ========================================================================================
+// animation
+// html
+<div class="semicircle">
+  <div>
+    <div>
+      <div>
+        <div>
+          <div>
+            <div>
+              <div>
+                <div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+// css
+.semicircle,
+.semicircle div {
+  /*  Adjust the size of the entire animation here.
+      (Remove max size below to go above 300px.) */
+  width: 170px;
+  height: 170px;
+  /* Adjust the speed or timing function of the animation here. */
+  animation: 6s rotate141 infinite linear;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+.semicircle div {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+}
+.semicircle:before,
+.semicircle div:before {
+  content: '';
+  width: 100%;
+  height: 50%;
+  display: block;
+  background: radial-gradient(transparent, transparent 65%, #000 65%, #000);
+  background-size: 100% 200%;
+}
+@keyframes rotate141 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+// ========================================================================================
+// half filled bottle with animaiton
+// html
+<div class="loader">
+    <div class="waves"></div>
+</div>
+// css
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  overflow: hidden;
+  height: 80px;
+  width: 80px;
+  border: 1px solid transparent;
+  box-shadow: 0 0 0 2px rgb(25, 116, 253);
+  border-radius: 50%;
+}
+.waves {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgb(30, 146, 255);
+  box-shadow: inset 0 0 50px rgb(0,0,0,.3);
+}
+.waves::before,
+.waves::after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  background: #000;
+}
+.waves::before {
+  border-radius: 45%;
+  background: rgb(248, 248, 248);
+  animation: wave91234 5s linear infinite;
+}
+.waves::after {
+  border-radius: 40%;
+  background: rgb(255,255,255,.5);
+  animation: wave91234 10s linear infinite;
+}
+@keyframes wave91234 {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+// ========================================================================================
+// HTML
+<div class="container">
+    <div class="card">
+	HTML
+    </div>
+    <div class="card">
+	CSS
+    </div>
+    <div class="card">
+	JavaScript
+    </div>
+    <div class="card">
+	Python
+    </div>
+</div>
+// CSS
+:root{
+ --background:#1F2336;
+ --scrollbar-background:#313852;
+ --text:#F1F1F1;
+ --text-active:#F1F1F180;
+}
+html{
+ scroll-behaviour:smooth;
+}
+body{
+ font-family:'Manrope',sans-serif;
+ height:100vh;
+ display:flex;
+ background-color:var(--background);
+ justify-content:center;
+ align-items:center;
+}
+*{
+ margin:0;
+ padding:0;
+ box-sizing:border-box
+}
+.container{
+ display:flex;
+ flex-direction:row;
+ gap:1.5rem;
+ padding:1rem;
+ max-width:200px;
+ overflow-x:scroll;
+ scroll-snap-type:x mandatory;
+}
+.card{
+ min-width:12.5rem;
+ min-height:12.5rem;
+ color:var(--text);
+ display:flex;
+ font-weight:600;
+ font-size:1.5rem;
+ border-radius:1rem;
+ transition:all 0.2s;
+ align-items:center;
+ justify-content:center;
+ cursor:pointer;
+ scroll-snap-align:start;
+}
+.card:nth-child(1){
+ background-image:linear-gradient(to bottom,#9377F2,#6250D7);
+}
+.card:nth-child(2){
+ background-image:linear-gradient(to bottom,#E5866C,#DF795D);
+}
+.card:nth-child(3){
+ background-image:linear-gradient(to bottom,#5866E4,#4D5AD9);
+}
+.card:nth-child(4){
+ background-image:linear-gradient(to bottom,#97BF42,#75AA29);
+}
+.container::-webkit-scrollbar{
+ height:0.6rem;
+}
+.container::-webkit-scrollbar-track{
+ background:var(--scrollbar-background);
+ border-radius:50rem;
+}
+.container::-webkit-scrollbar-thumb{
+ background:var(--text);
+ border-radius:50rem;
+}
+// ===================================================================
+// coloured text
+<h1>Hello World</h1>
+// css
+h1{
+ background:linear-gradient(90deg,#00ffff,#ff00c3);
+ -webkit-background-clip:text;
+ background-clip:text;
+ -webkit-text-fill-color:transparent;
+}

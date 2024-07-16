@@ -1,0 +1,193 @@
+// to import scss file to use in the currently scss file with no need to be preproccessed
+@use "link | url";
+@import "link | url"; // this method is deprecated
+// =================================================================
+// to use the variable but with the output not the variable name
+$Var-Name: green; // now this is a global variable
+.header {
+  color: $Var-Name;
+}
+.body {
+  $Var-Name: black !global; // now the value of the global have been updated
+  color: $Var-Name;
+}
+.footer {
+  color: $Var-Name; // now its black because we changed it when we made local variable with the same name and added !global keyword
+}
+/*
+if you made a variables file and wanted to import it to a scss file it won't work because it doesn't recongnize the variables so you have two solutions
+1) write @use 'variable' as *;
+2) when you use a variable write this : color: variable-file.theVariable;
+*/
+// =================================================================
+// instead of using nesting in css you can use this simple syntax
+.parent {
+  color: #000;
+  .child {
+    color: #808080;
+    .grand-child {
+      color: #fff;
+    }
+  }
+}
+// to get the direct child you can use this
+.parent > {
+  .child {
+    color: #000;
+  }
+}
+// to make a mix between direct child and none direct child
+.parent {
+  > .dir-child {
+    color: #000;
+  }
+  .non-dir-child {
+    color: #fff;
+  }
+}
+// for grouping direct and not direct children
+.parent {
+  > {
+    .child-one {
+      color: #000;
+    }
+    .child-two {
+      color: #000;
+    }
+  }
+  .child-three {
+    color: #fff;
+  }
+  .child-four {
+    color: #fff;
+  }
+}
+// to deal with children and the father in one block of code
+.parent {
+  .child {
+    color: #000;
+  }
+  &.parent-another-class {
+    color: #fff;
+  }
+}
+// =================================================================
+// to but some properties in some place instead of repeating them more and more
+.main-box {
+  background-color: white;
+  padding: 15px;
+  border: 1px solid #ccc;
+}
+.ads {
+  @extend .main-box;
+  font-size: 32px;
+  color: blue;
+}
+// to make a placeholder what means some kind of variable that contains some collected properties together
+%main-box {
+  background-color: white;
+  padding: 15px;
+  border: 1px solid #ccc;
+}
+.ads {
+  @extend %main-box;
+  font-size: 32px;
+  color: blue;
+}
+// ==================================================================
+// to use if and else in scss
+$theme: "light";
+.page {
+  @if ($theme == "light") {
+    background-color: wheat;
+    color: #808080;
+  } @else {
+    background-color: #000;
+    color: #fff;
+  }
+  // or
+  background-color: if($theme == "light", white, black);
+  color: if($theme == "light", black, white);
+}
+// =================================================================
+// to put the variable in some component use this experssion
+$my_var: "red-x";
+$my_new_var: "VENOM | #{$my_var}";
+// =================================================================
+// to make a function
+@mixin list-reset() {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+ul.links {
+  @include list-reset();
+}
+// ==================================================================
+// loops
+// to (not including end) through (including end)
+@for $i from 1 to 10 {
+  .class-#{$i} {
+    font-size: 10px + $i;
+  }
+}
+// =================================================================
+// each keyword
+$themes: red, green, blue, black;
+@each $theme in $themes {
+  .#{$theme}-theme {
+    background-color: white;
+    border: 1px solid $theme;
+  }
+}
+// map keyword
+$socials: (
+  "facebook": rgb(30, 100, 255),
+  "twitter": rgb(0, 160, 255),
+  "youtube": rgb(255, 55, 55),
+);
+@each $name, $color in $socials {
+  .links .#{$name} {
+    background-color: white;
+    color: $color;
+  }
+}
+// =================================================================
+// while loop
+$start: 1;
+@while $start <=10 {
+  .width-#{$start * 100} {
+    width: $start * 100px;
+    height: ($start * 100px) / 2;
+  }
+  $start: $start + 1;
+}
+// =================================================================
+// to make a function
+@function half($size) {
+  @return $size / 2;
+}
+@function calculate($sizes...) {
+  $total: 0;
+  @each $size in $sizes {
+    $total: $total + $size;
+  }
+}
+// =================================================================
+@mixin keyFrame($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+@include keyFrame(show) {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+// =================================================================
