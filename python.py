@@ -295,3 +295,14 @@ def eight_queens(pop_size, max_generations, pc=0.7, pm=0.01):
     print('best solution:', best_solution)
     return best_solution
 eight_queens(pop_size=1000, max_generations=10000, pc=0.7, pm=0.01)
+#================================================================
+# rename folder files based on thier index
+import os
+def rename_files(folder_path):
+  files = os.listdir(folder_path)
+  for index, file in enumerate(files):
+    new_name = str(index).zfill(3)  # Adjust the number of zeros as needed
+    os.rename(os.path.join(folder_path, file), os.path.join(folder_path, new_name))
+# Replace 'your_folder_path' with the actual path to your folder
+folder_path = './src/'
+rename_files(folder_path)

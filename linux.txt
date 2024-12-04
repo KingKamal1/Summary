@@ -1,6 +1,7 @@
 pwd													=> the current directory
 ls													=> list files and folders
 ls path													=> list files and folders in this path
+cd path													=> enter the path
 clear													=> clear the terminal
 echo text												=> print the text in terminal
 date													=> return the date
@@ -11,18 +12,30 @@ history													=> history of your commands
 varName=value												=> declare a global vairable
 $varName												=> use this variable
 which command												=> return the path of the command
-type command												=> return the type of the command
 alias													=> return all shortcut commands
+type command												=> return the type of the command
 type -a command												=> all the data about the command
 info command												=> info page of the command
 command --help												=> help page of the command
-cd path													=> enter the path
+man command												=> dictionary page of the command
 cp path1 path2												=> copy from path one to path two
+mv path1 path2												=> move a file from path 1 to path 2
 touch fileName												=> create a file
-rm fileName												=> remove a file
-mkdir folderName											=> make a directory
+mkdir folderName											=> create a directory
+rm fileName												=> remove a file (-rf removes all file and directory)
 rmdir folderName											=> remove a directory
 nano fileName												=> edit a file
+tree -d path												=> show directories in tree style
+ln -s file1 file2											=> to create a shortcut for file1 by name file2
+locate fileName												=> locate a file in system
+find path fileNmae											=> find a file in a specified path
+grep -i searchWord file.txt										=> find a word in a file (-i means insensitive)
+chmod u=rwx,g+r,o-rw,a+x file.extension									=> specify the persmisions for user all , group add read , other remove read and write and all add execute
+gzip compressedFileName file1.ext file2.ext ...								=> compress files
+gunzip compressedFileName										=> decompress file
+tar -cvf tar-file-name.tar file1.ext file2.ext ...							=> compress files
+tar -xvf tar-file-name.tar										=> decompress file
+
 ========================================================================================================
 sudo apt install appName										=> install an application
 sudo dpkg -i fileName.extension										=> install an application from a package
